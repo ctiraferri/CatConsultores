@@ -275,6 +275,7 @@ textarea:focus-visible {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
     align-items: center;
+    z-index: 10;
 }
 
 .hero-text {
@@ -324,6 +325,8 @@ textarea:focus-visible {
     left: 0;
     right: 0;
     height: 120px;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-wave svg {
@@ -977,7 +980,7 @@ section {
     }
 
     .hero {
-        padding: calc(80px + var(--space-lg)) 0 var(--space-lg);
+        padding: calc(80px + var(--space-lg)) 0 calc(var(--space-lg) + 40px);
     }
 
     .hero-image {
@@ -1097,6 +1100,7 @@ section {
     /* Adjust hero padding to account for fixed navbar */
     .hero {
         padding-top: calc(80px + var(--space-md));
+        padding-bottom: calc(var(--space-xl) + 60px);
     }
 
     .footer-content {
@@ -1114,10 +1118,21 @@ section {
     .hero-cta {
         flex-direction: column;
         gap: var(--space-sm);
+        margin-bottom: var(--space-md);
     }
 
     .btn {
         width: 100%;
+    }
+
+    /* Reduce wave height on very small screens */
+    .hero-wave {
+        height: 80px;
+    }
+
+    /* Extra padding for hero section on small screens */
+    .hero {
+        padding-bottom: calc(var(--space-lg) + 40px);
     }
 
     .services-grid,
