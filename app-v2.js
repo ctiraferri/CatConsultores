@@ -39,7 +39,7 @@ function TopBar({ lang, setLang, t }) {
 }
 
 function Nav({ t }) {
-  const ids = ['inicio','servicios','fuentes','filosofia','proceso','demo','contacto'];
+  const ids = ['inicio','servicios','fuentes','desarrollos','filosofia','proceso','demo','contacto'];
   return (
     <nav className="nav">
       <ul>
@@ -103,6 +103,136 @@ function Sources({ t }) {
               <div className="src-dot">connected</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const STACK = ['React', 'Next.js', 'TypeScript', 'Node', 'Tailwind', 'Flask', 'FastAPI', 'PostgreSQL', 'MySQL', 'GraphQL', '.NET', 'Python', 'y más'];
+
+function Desarrollos({ lang, t }) {
+  const es = lang === 'es';
+  const parts = t.sectionLabels.dev;
+  return (
+    <section id="desarrollos">
+      <SectionLabel parts={parts} />
+      <div className="desarrollos">
+        <div className="des-left">
+          <h2 className="reveal">
+            {es ? <>Aplicativos que simplifican, <em>automatizan</em> y escalan.</>
+                : <>Applications that simplify, <em>automate</em> and scale.</>}
+          </h2>
+          <p className="lede reveal">
+            {es
+              ? 'Desarrollamos software a medida con las mismas herramientas que usan los mejores equipos del mundo. Aplicativos web o de escritorio que reemplazan procesos manuales, eliminan fricciones y ponen a tu equipo a hacer lo que realmente importa.'
+              : 'We build custom software with the same tools used by the world\'s best engineering teams. Web or desktop applications that replace manual processes, remove friction and let your team focus on what actually matters.'}
+          </p>
+          <div className="mvp-stat reveal">
+            <div className="num">2–<em>4</em></div>
+            <div className="lbl">
+              <strong>{es ? 'Semanas · MVP' : 'Weeks · MVP'}</strong>
+              {es ? <>De kickoff a producción.<br/>Iteraciones ágiles, entregas<br/>funcionales desde el día uno.</>
+                  : <>From kickoff to production.<br/>Agile iterations, functional<br/>deliveries from day one.</>}
+            </div>
+          </div>
+          <div className="stack reveal">
+            <div style={{marginBottom:'10px', color:'var(--fg)', letterSpacing:'0.1em', fontFamily:'var(--font-mono)', fontSize:'11px'}}>STACK</div>
+            <div className="stack-row">
+              {STACK.map((s, i) => <span key={i}>{s}</span>)}
+            </div>
+          </div>
+        </div>
+
+        <div className="des-right">
+          <div className="des-card reveal">
+            <div className="ix">{es ? '01 / VELOCIDAD' : '01 / SPEED'}</div>
+            <h3>{es ? 'Entrega' : 'Delivery'}</h3>
+            <p>{es
+              ? 'MVP en 2 a 4 semanas. Iteramos con metodología ágil y entregas funcionales desde el día uno, no al final del proyecto.'
+              : 'MVP in 2 to 4 weeks. We iterate with agile methodology and working deliverables from day one, not at the end of the project.'}</p>
+            <div className="viz">
+              <div className="sprint-viz">
+                {[['SPRINT 1','100%'],['SPRINT 2','92%'],['SPRINT 3','78%'],['SPRINT 4','54%']].map(([label, pct], i) => (
+                  <div key={i} className="sprint-row">
+                    <span>{label}</span>
+                    <div className="bar-wrap">
+                      <div className={`bar-fill${i > 0 ? ` r${i+1}` : ''}`} style={{'--target': pct}}></div>
+                    </div>
+                    <span className="snum">{pct}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="tags">
+              {(es ? ['Ágil','MVP','Sprint'] : ['Agile','MVP','Sprint']).map((tg,i) => <span key={i}>{tg}</span>)}
+            </div>
+          </div>
+
+          <div className="des-card reveal">
+            <div className="ix">{es ? '02 / FLEXIBILIDAD' : '02 / FLEXIBILITY'}</div>
+            <h3><em>{es ? 'Adaptación' : 'Adaptation'}</em></h3>
+            <p>{es
+              ? 'Construimos sobre tus procesos reales, no sobre plantillas genéricas. La solución crece y cambia junto con tu operación.'
+              : 'We build on your real processes, not generic templates. The solution grows and evolves with your operation.'}</p>
+            <div className="viz">
+              <div className="adapt-viz">
+                <div className="adapt-block"></div>
+                <div className="adapt-block"></div>
+                <div className="adapt-block"></div>
+                <div className="adapt-block"></div>
+              </div>
+              <div style={{fontFamily:'var(--font-mono)',fontSize:10,color:'var(--fg-dim)',letterSpacing:'0.08em',marginTop:10,display:'flex',justifyContent:'space-between'}}>
+                <span>{es ? 'MÓDULOS' : 'MODULES'}</span>
+                <span style={{color:'var(--accent)'}}>◆ {es ? 'ESCALABLE' : 'SCALABLE'}</span>
+              </div>
+            </div>
+            <div className="tags">
+              {(es ? ['A medida','Escalable','Sin lock-in'] : ['Custom','Scalable','No lock-in']).map((tg,i) => <span key={i}>{tg}</span>)}
+            </div>
+          </div>
+
+          <div className="des-card reveal">
+            <div className="ix">{es ? '03 / ECONOMÍA' : '03 / ECONOMY'}</div>
+            <h3>{es ? 'Inversión' : 'Investment'}</h3>
+            <p>{es
+              ? 'Sin licencias perpetuas ni dependencia de proveedores. El código es tuyo desde el primer commit.'
+              : 'No perpetual licenses or vendor dependency. The code is yours from the very first commit.'}</p>
+            <div className="viz">
+              <div className="cost-viz">
+                <div className="cost-row-head">
+                  <span className="cost-label accent">{es ? 'Código propio' : 'Your code'}</span>
+                  <span>{es ? '$ fijo' : '$ fixed'}</span>
+                </div>
+                <div className="cost-bar yours"><span></span></div>
+                <div className="cost-row-head" style={{marginTop:8}}>
+                  <span className="cost-label">{es ? 'Licencias SaaS' : 'SaaS Licenses'}</span>
+                  <span>{es ? '$ creciente' : '$ growing'}</span>
+                </div>
+                <div className="cost-bar"><span></span></div>
+              </div>
+            </div>
+            <div className="tags">
+              {(es ? ['Open source','Sin vendor','Código propio'] : ['Open source','No vendor','Your code']).map((tg,i) => <span key={i}>{tg}</span>)}
+            </div>
+          </div>
+
+          <div className="ai-card reveal">
+            <div className="ai-main">
+              <div className="ai-icon"><span>✦</span></div>
+              <div>
+                <h4>{es ? <>Todo el poder de la IA, <em>a tu servicio.</em></> : <>The full power of AI, <em>at your service.</em></>}</h4>
+                <p className="ai-sub">
+                  {es
+                    ? 'Integramos GPT, Claude y Gemini directamente en tus procesos. No como herramientas externas — como parte del sistema que construimos juntos.'
+                    : 'We integrate GPT, Claude and Gemini directly into your processes. Not as external tools — as part of the system we build together.'}
+                </p>
+              </div>
+            </div>
+            <div className="ai-chips">
+              {['ChatGPT','Claude','Gemini','+ Custom models'].map((m,i) => <span key={i}>{m}</span>)}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -281,8 +411,8 @@ function Footer({ t }) {
         <ul>
           <li><a href="#inicio">{t.nav[0]}</a></li>
           <li><a href="#servicios">{t.nav[1]}</a></li>
-          <li><a href="#filosofia">{t.nav[3]}</a></li>
-          <li><a href="#contacto">{t.nav[6]}</a></li>
+          <li><a href="#filosofia">{t.nav[4]}</a></li>
+          <li><a href="#contacto">{t.nav[7]}</a></li>
         </ul>
       </div>
       <div>
@@ -323,6 +453,7 @@ function App() {
 
       <Services t={t} />
       <Sources t={t} />
+      <Desarrollos lang={lang} t={t} />
       <Philosophy t={t} />
       <Process t={t} />
       <Demo t={t} accent="#A9B8C7" />

@@ -1,7 +1,7 @@
 // Content dictionary: ES + EN
 window.CONTENT = {
   es: {
-    nav: ['INICIO', 'SERVICIOS', 'FUENTES', 'FILOSOFÍA', 'PROCESO', 'DEMO', 'CONTACTO'],
+    nav: ['INICIO', 'SERVICIOS', 'FUENTES', 'DESARROLLOS', 'FILOSOFÍA', 'PROCESO', 'DEMO', 'CONTACTO'],
     cta_nav: 'EMPEZAR',
     status: ['SISTEMA OPERATIVO', 'BUENOS AIRES / AR', 'DATA STREAM'],
     hero: {
@@ -25,10 +25,11 @@ window.CONTENT = {
     sectionLabels: {
       svc: ['02 / SERVICIOS', 'QUÉ HACEMOS', 'TRES DISCIPLINAS'],
       src: ['03 / FUENTES', 'DE DÓNDE VIENEN LOS DATOS', '12+ INTEGRACIONES'],
-      phi: ['04 / FILOSOFÍA', 'CÓMO PENSAMOS', 'MEJORA CONTINUA'],
-      prc: ['05 / PROCESO', 'CÓMO TRABAJAMOS', '5 FASES / ~4 SEMANAS'],
-      dmo: ['06 / DEMO', 'JUGÁ CON LOS DATOS', 'INTERACTIVO'],
-      cta: ['07 / CONTACTO', 'HABLEMOS', 'CABA · ARG']
+      dev: ['04 / DESARROLLOS', 'SOLUCIONES A MEDIDA', 'WEB · ESCRITORIO · IA'],
+      phi: ['05 / FILOSOFÍA', 'CÓMO PENSAMOS', 'MEJORA CONTINUA'],
+      prc: ['06 / PROCESO', 'CÓMO TRABAJAMOS', '5 FASES / ~4 SEMANAS'],
+      dmo: ['07 / DEMO', 'JUGÁ CON LOS DATOS', 'INTERACTIVO'],
+      cta: ['08 / CONTACTO', 'HABLEMOS', 'CABA · ARG']
     },
     services: [
       {
@@ -130,7 +131,7 @@ window.CONTENT = {
     }
   },
   en: {
-    nav: ['HOME', 'SERVICES', 'SOURCES', 'PHILOSOPHY', 'PROCESS', 'DEMO', 'CONTACT'],
+    nav: ['HOME', 'SERVICES', 'SOURCES', 'DEVELOPMENTS', 'PHILOSOPHY', 'PROCESS', 'DEMO', 'CONTACT'],
     cta_nav: 'START',
     status: ['SYSTEM OPERATIONAL', 'BUENOS AIRES / AR', 'DATA STREAM'],
     hero: {
@@ -154,10 +155,11 @@ window.CONTENT = {
     sectionLabels: {
       svc: ['02 / SERVICES', 'WHAT WE DO', 'THREE DISCIPLINES'],
       src: ['03 / SOURCES', 'WHERE YOUR DATA LIVES', '12+ INTEGRATIONS'],
-      phi: ['04 / PHILOSOPHY', 'HOW WE THINK', 'CONTINUOUS IMPROVEMENT'],
-      prc: ['05 / PROCESS', 'HOW WE WORK', '5 PHASES / ~4 WEEKS'],
-      dmo: ['06 / DEMO', 'PLAY WITH THE DATA', 'INTERACTIVE'],
-      cta: ['07 / CONTACT', 'LET\'S TALK', 'CABA · ARG']
+      dev: ['04 / DEVELOPMENTS', 'CUSTOM SOLUTIONS', 'WEB · DESKTOP · AI'],
+      phi: ['05 / PHILOSOPHY', 'HOW WE THINK', 'CONTINUOUS IMPROVEMENT'],
+      prc: ['06 / PROCESS', 'HOW WE WORK', '5 PHASES / ~4 WEEKS'],
+      dmo: ['07 / DEMO', 'PLAY WITH THE DATA', 'INTERACTIVE'],
+      cta: ['08 / CONTACT', 'LET\'S TALK', 'CABA · ARG']
     },
     services: [
       {
