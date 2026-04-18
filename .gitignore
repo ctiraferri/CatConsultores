@@ -30,3 +30,6 @@ temp_*.json
 # Text files
 *.md
 *.txt
+
+# Design proposals (local only)
+newdesign/
