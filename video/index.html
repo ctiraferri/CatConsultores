@@ -94,5 +94,16 @@
   </main>
 
   <footer>© CAT Consultores · catconsultores.com.ar</footer>
+
+  <script>
+    // Volumen por defecto al 25%
+    (function(){
+      var v = document.querySelector('video');
+      if(!v) return;
+      var setVol = function(){ v.volume = 0.25; };
+      setVol();
+      v.addEventListener('loadedmetadata', setVol);
+    })();
+  </script>
 </body>
 </html>
