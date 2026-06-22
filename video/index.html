@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CAT Consultores · Video</title>
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<meta name="description" content="Video — CAT Consultores. Consultoría en visualización de datos y Power BI." />
+
+<!-- Open Graph / compartir en redes y WhatsApp -->
+<meta property="og:type" content="video.other" />
+<meta property="og:title" content="CAT Consultores · Video" />
+<meta property="og:description" content="Consultoría en visualización de datos y Power BI." />
+<meta property="og:url" content="https://catconsultores.com.ar/video" />
+<meta property="og:image" content="https://catconsultores.com.ar/assets/logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#12110F; --bg-2:#1A1915; --fg:#EDE8DE;
+    --fg-dim:rgba(237,232,222,0.62); --rule:rgba(237,232,222,0.10);
+    --rule-strong:rgba(237,232,222,0.24); --accent:#A9B8C7; --accent-ink:#12110F;
+    --font-sans:'Instrument Sans','Inter',system-ui,sans-serif;
+    --font-display:'Instrument Serif','Times New Roman',Georgia,serif;
+    --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--fg); font-family:var(--font-sans);
+    min-height:100%; display:flex; flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px; padding:14px 40px; border-bottom:1px solid var(--rule);
+    font-family:var(--font-mono); font-size:13px;
+  }
+  .brand{font-family:var(--font-display); font-size:20px; letter-spacing:.5px}
+  .brand span{color:var(--accent)}
+  .back{
+    color:var(--fg-dim); border:1px solid transparent; padding:6px 12px;
+    border-radius:6px; transition:.2s;
+  }
+  .back:hover{color:var(--fg); border-color:var(--rule-strong)}
+
+  main{
+    flex:1; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:48px 24px; gap:28px;
+  }
+  .label{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:2px;
+    text-transform:uppercase; color:var(--fg-dim);
+  }
+  h1{
+    font-family:var(--font-display); font-weight:400; font-size:clamp(28px,5vw,46px);
+    text-align:center; line-height:1.1;
+  }
+  .player{
+    width:100%; max-width:960px; border:1px solid var(--rule-strong);
+    border-radius:12px; overflow:hidden; background:#000;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+  }
+  video{display:block; width:100%; height:auto}
+
+  footer{
+    text-align:center; padding:24px; font-family:var(--font-mono);
+    font-size:12px; color:var(--fg-dim); border-top:1px solid var(--rule);
+  }
+  @media (max-width:600px){ .topbar{padding:14px 20px} }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">CAT <span>Consultores</span></a>
+    <a class="back" href="/">← Volver al sitio</a>
+  </header>
+
+  <main>
+    <div class="label">Video</div>
+    <h1>CAT Consultores</h1>
+    <div class="player">
+      <video controls preload="metadata" playsinline poster="../assets/logo.png">
+        <source src="../assets/videojun2026.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+        <a href="../assets/videojun2026.mp4">Descargar el video</a>.
+      </video>
+    </div>
+  </main>
+
+  <footer>© CAT Consultores · catconsultores.com.ar</footer>
+</body>
+</html>
