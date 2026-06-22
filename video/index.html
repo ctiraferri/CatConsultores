@@ -85,7 +85,7 @@
     <div class="label">Video</div>
     <h1>CAT Consultores</h1>
     <div class="player">
-      <video controls preload="metadata" playsinline poster="../assets/video-cover.png">
+      <video controls muted preload="metadata" playsinline poster="../assets/video-cover.png">
         <source src="../assets/videojun2026.mp4" type="video/mp4" />
         Tu navegador no soporta la reproducción de video.
         <a href="../assets/videojun2026.mp4">Descargar el video</a>.
@@ -96,13 +96,18 @@
   <footer>© CAT Consultores · catconsultores.com.ar</footer>
 
   <script>
-    // Volumen por defecto al 25%
+    // Muteado por defecto; al sacar el mute, suena al 25%
     (function(){
       var v = document.querySelector('video');
       if(!v) return;
       var setVol = function(){ v.volume = 0.25; };
       setVol();
+      v.muted = true;
       v.addEventListener('loadedmetadata', setVol);
+      // Cuando el usuario quita el mute por primera vez, garantizar 25%
+      v.addEventListener('volumechange', function once(){
+        if(!v.muted){ v.volume = 0.25; v.removeEventListener('volumechange', once); }
+      });
     })();
   </script>
 </body>
