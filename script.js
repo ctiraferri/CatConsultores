@@ -70,7 +70,7 @@ contactForm.addEventListener('submit', async (e) => {
     };
 
     // Use FormSubmit.co for email handling (free service)
-    const formSubmitURL = 'https://formsubmit.co/ctiraferri@gmail.com';
+    const formSubmitURL = 'https://formsubmit.co/ctiraferri@catconsultores.com.ar';
 
     try {
         const response = await fetch(formSubmitURL, {

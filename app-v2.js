@@ -324,7 +324,7 @@ function Contact({ t }) {
     setStatus('sending');
     const formData = new FormData(formRef.current);
     try {
-      const res = await fetch('https://formsubmit.co/ctiraferri@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ctiraferri@catconsultores.com.ar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
@@ -419,7 +419,7 @@ function Footer({ t }) {
         <h5>{t.footer.socialH}</h5>
         <ul>
           <li><a href="https://www.linkedin.com/in/catconsultores">LinkedIn ↗</a></li>
-          <li><a href="mailto:hola@catconsultores.com.ar">hola@catconsultores.com.ar</a></li>
+          <li><a href="#contacto">{t.nav[7]} →</a></li>
         </ul>
       </div>
       <div className="bottom">
