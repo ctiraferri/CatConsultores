@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CAT Consultores · Resultados como Servicio (RaaS) — MAQUETA</title>
+<title>CAT Consultores · Resultados como Servicio (RaaS)</title>
 <meta name="robots" content="noindex, nofollow" />
 <link rel="icon" type="image/png" href="../assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,11 +59,6 @@ em{font-style:italic;color:var(--accent)}
   font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
   border:1px solid var(--rule-2);border-radius:99px;padding:5px 11px;color:var(--faint);white-space:nowrap;
 }
-.vswitch{display:flex;align-items:center;border:1px solid var(--rule-2);border-radius:99px;overflow:hidden;flex:0 0 auto}
-.vswitch a{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;color:var(--faint);transition:background .2s,color .2s}
-.vswitch a[aria-current]{background:var(--accent);color:var(--ink)}
-.vswitch a:hover{color:var(--fg)}
-.vswitch a[aria-current]:hover{color:var(--ink)}
 .navlinks{display:flex;gap:22px;margin-left:auto;align-items:center}
 .navlinks a{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);transition:color .25s}
 .navlinks a:hover{color:var(--fg)}
@@ -255,29 +250,6 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 .fcol a,.fcol span{display:block;font-size:13.5px;color:var(--dim);margin-bottom:9px}
 .fbot{margin-top:clamp(40px,6vh,64px);padding-top:22px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:var(--faint)}
 
-/* ---------- panel de notas (solo maqueta) ---------- */
-#notesbtn{
-  position:fixed;right:18px;bottom:18px;z-index:80;cursor:pointer;
-  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  background:var(--accent);color:var(--ink);border:0;padding:12px 16px;border-radius:2px;
-  box-shadow:0 10px 40px rgba(0,0,0,.45);transition:transform .3s var(--ease);
-}
-#notesbtn:hover{transform:translateY(-2px)}
-#notes{
-  position:fixed;right:18px;bottom:64px;z-index:80;width:min(410px,calc(100vw - 36px));
-  max-height:min(72vh,660px);overflow:auto;background:var(--bg-3);border:1px solid var(--rule-2);
-  padding:24px 24px 28px;box-shadow:0 20px 70px rgba(0,0,0,.6);
-  opacity:0;transform:translateY(10px) scale(.98);pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);
-}
-#notes.open{opacity:1;transform:none;pointer-events:auto}
-#notes h4{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:400;margin:0 0 6px}
-#notes h5{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:400;margin:22px 0 9px}
-#notes p,#notes li{font-size:13px;line-height:1.55;color:var(--dim)}
-#notes ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-#notes li{padding-left:15px;position:relative}
-#notes li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--accent)}
-#notes li b{color:var(--fg);font-weight:500}
-
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -297,7 +269,6 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     display:flex;flex-direction:column;gap:20px;position:fixed;inset:57px 0 auto 0;
     background:var(--bg);padding:26px var(--pad) 32px;border-bottom:1px solid var(--rule);margin:0;align-items:flex-start;
   }
-  .vswitch{display:none}
   .stats{grid-template-columns:1fr 1fr}
   .swaprow{grid-template-columns:1fr;gap:7px}
   .swaprow .ar{text-align:left}
@@ -329,7 +300,6 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     <img src="../assets/logo.png" alt="CAT Consultores" />
     <span class="bn">CAT <span>Consultores</span></span>
   </a>
-  <span class="vswitch"><a href="index.html" aria-current="page">v0</a><a href="v1.html">v1</a></span>
   <nav class="navlinks" id="nav">
     <a href="#que-es">Qué es <span class="kc">RaaS</span></a>
     <a href="#linea"><span class="kc">SaaS</span> vs <span class="kc">RaaS</span></a>
@@ -361,7 +331,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
       Eso es lo que entregamos. La herramienta es el medio, no el producto.</p>
 
     <div class="actions rv">
-      <a class="btn solid" href="#que-es">Qué es RaaS ↓</a>
+      <a class="btn solid" href="#que-es">Qué es <span class="kc">RaaS</span> ↓</a>
       <a class="btn ghost" href="#contacto">Hablemos</a>
     </div>
 
@@ -793,7 +763,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
         <label class="field"><span>Empresa</span><input type="text" name="empresa" placeholder="Dónde trabajás" /></label>
         <label class="field"><span>Qué resultado buscás</span><textarea name="mensaje" rows="4" placeholder="«Quiero saber todos los lunes qué producto me deja margen», «quiero dejar de cargar la venta a mano»…"></textarea></label>
         <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit">Enviar mensaje</button></div>
-        <div class="formnote" id="frmnote">Maqueta · el formulario todavía no envía nada</div>
+        <div class="formnote" id="frmnote">También podés escribirnos por LinkedIn</div>
       </form>
 
       <div class="rv">
@@ -835,49 +805,10 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     </div>
     <div class="fbot mono">
       <span>© 2015–2026 CAT Consultores</span>
-      <span>Maqueta interna · Resultados como Servicio</span>
+      <span>Resultados como Servicio</span>
     </div>
   </div>
 </footer>
-
-<button id="notesbtn" aria-expanded="false" aria-controls="notes">◉ Notas de maqueta</button>
-<aside id="notes" hidden>
-  <h4>Notas de esta maqueta</h4>
-  <p>Este archivo es local. No toca el sitio publicado ni el brochure.</p>
-
-  <h5>Decisiones aplicadas</h5>
-  <ul>
-    <li><b>Reenfoque total:</b> RaaS es el relato principal. Power BI, desarrollo y dashboards pasaron a ser «el cómo».</li>
-    <li><b>Solo narrativa:</b> no se promete ningún esquema de precios, garantía ni pago por resultado.</li>
-    <li><b>Nombre:</b> «Resultados como Servicio» en castellano, con la sigla RaaS como apoyo.</li>
-  </ul>
-
-  <h5>Frases de compromiso · resueltas</h5>
-  <ul>
-    <li><b>Si no funciona:</b> queda «nadie lo da por cerrado». Contesta lo mismo que las otras dos columnas y no compromete plata ni resultado.</li>
-    <li><b>Avisar antes de empezar:</b> se eliminó. No hay diagnóstico previo a contratar, así que la página no lo dice.</li>
-    <li><b>El indicador:</b> pasó de «el indicador que acordamos» a la pregunta de negocio. La fase 01 del proceso acompaña.</li>
-    <li><b>Además:</b> «un número que se mueve todas las semanas» perdió la cadencia. Sin indicador acordado, prometer frecuencia quedaba sin respaldo.</li>
-  </ul>
-
-  <h5>La página ya no promete</h5>
-  <ul>
-    <li>Ni precios, ni garantías, ni pago por resultado, ni métricas comprometidas, ni plazos de respuesta. Todo lo que queda describe cómo trabajás o qué es el modelo.</li>
-  </ul>
-
-  <h5>Números usados</h5>
-  <ul>
-    <li>11 años · 50+ · 12 fuentes · 2–4 semanas. Son los mismos del sitio y el brochure actuales. «50+ tableros» pasó a «50+ soluciones en producción».</li>
-  </ul>
-
-  <h5>Todavía no está</h5>
-  <ul>
-    <li>Versión en inglés (el sitio actual es ES/EN).</li>
-    <li>Demo interactiva, casos y video: quedaron afuera de esta primera pasada.</li>
-    <li>Formulario real (FormSubmit) y SEO / schema.org.</li>
-    <li>Brochure: sale después, con este copy ya validado.</li>
-  </ul>
-</aside>
 
 <script>
 (function(){
@@ -950,19 +881,10 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   frm.addEventListener("submit", function(e){
     e.preventDefault();
     var note = document.getElementById("frmnote");
-    note.textContent = "Maqueta · no se envió nada. En el sitio real esto va a FormSubmit.";
+    note.textContent = "Por ahora el contacto va por LinkedIn: linkedin.com/in/catconsultores";
     note.style.color = "var(--accent)";
   });
 
-  /* panel de notas */
-  var nb = document.getElementById("notesbtn");
-  var np = document.getElementById("notes");
-  np.hidden = false;
-  nb.addEventListener("click", function(){
-    var open = np.classList.toggle("open");
-    nb.setAttribute("aria-expanded", String(open));
-    nb.textContent = open ? "✕ Cerrar notas" : "◉ Notas de maqueta";
-  });
 
   /* reveal */
   var rv = Array.prototype.slice.call(document.querySelectorAll(".rv"));
