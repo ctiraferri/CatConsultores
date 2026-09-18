@@ -1,11 +1,65 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CAT Consultores · Resultados como Servicio (RaaS)</title>
-<meta name="robots" content="noindex, nofollow" />
+<title>Results as a Service (RaaS) · Power BI | CAT Consultores</title>
+<meta name="description" content="We don't sell you the tool: we deliver the result. Results as a Service (RaaS) from Buenos Aires: Power BI, dashboards, data integration and custom software." />
+<link rel="canonical" href="https://catconsultores.com.ar/en/" />
+<link rel="alternate" hreflang="es-AR" href="https://catconsultores.com.ar/" />
+<link rel="alternate" hreflang="en" href="https://catconsultores.com.ar/en/" />
+<link rel="alternate" hreflang="x-default" href="https://catconsultores.com.ar/" />
 <link rel="icon" type="image/png" href="../assets/logo.png" />
+<meta name="author" content="CAT Consultores" />
+<meta name="geo.region" content="AR-C" />
+<meta name="geo.placename" content="Caballito, Buenos Aires" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_AR" />
+<meta property="og:url" content="https://catconsultores.com.ar/en/" />
+<meta property="og:site_name" content="CAT Consultores" />
+<meta property="og:title" content="Results as a Service (RaaS) · CAT Consultores" />
+<meta property="og:description" content="We don't sell you the tool: we deliver the result. Power BI, dashboards, integrations and custom software from Buenos Aires." />
+<meta property="og:image" content="https://catconsultores.com.ar/assets/og-raas.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Results as a Service (RaaS) · CAT Consultores" />
+<meta name="twitter:description" content="We don't sell you the tool: we deliver the result." />
+<meta name="twitter:image" content="https://catconsultores.com.ar/assets/og-raas.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://catconsultores.com.ar/en/",
+  "url": "https://catconsultores.com.ar/en/",
+  "name": "Results as a Service (RaaS) · CAT Consultores",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://catconsultores.com.ar/#sitio" },
+  "about": { "@id": "https://catconsultores.com.ar/#raas" },
+  "publisher": { "@id": "https://catconsultores.com.ar/#negocio" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {"@type":"Question","name":"What is RaaS or Results as a Service?","acceptedAnswer":{"@type":"Answer","text":"Results as a Service (RaaS) is a model where what you contract is not a tool or a project with a closing date, but a concrete business result, sustained over time. Choosing the technology, building it, running it and keeping it alive stays on the provider's side. The acronym was coined by analogy with SaaS, PaaS and IaaS."}},
+    {"@type":"Question","name":"What is the difference between SaaS and RaaS?","acceptedAnswer":{"@type":"Answer","text":"SaaS gives you access to software that already exists: learning it, configuring it, feeding it and getting value out of it is still your job. RaaS takes on that whole chain and what it delivers is the result. Put shortly: SaaS rents you the car, RaaS drives you to the destination."}},
+    {"@type":"Question","name":"How is RaaS different from traditional consulting?","acceptedAnswer":{"@type":"Answer","text":"Classic consulting sells hours and ends on delivery day. Under Results as a Service there is no closing date, because the job is for the result to hold and to keep adjusting as the business changes."}},
+    {"@type":"Question","name":"Which technologies do you use?","acceptedAnswer":{"@type":"Answer","text":"Power BI for dashboards, data modelling and DAX measures; integrations with ERP, point of sale and ecommerce; and custom development in React, Next.js, TypeScript, Node, Python, .NET, PostgreSQL and MySQL. We integrate more than twelve data sources."}},
+    {"@type":"Question","name":"How long until it is up and running?","acceptedAnswer":{"@type":"Answer","text":"Two to four weeks to the first result in production, with working deliveries from the first week rather than a single handover at the end of the project."}},
+    {"@type":"Question","name":"Do you only work in Buenos Aires?","acceptedAnswer":{"@type":"Answer","text":"We are based in Caballito, City of Buenos Aires, and we work with companies across the city, the province of Buenos Aires and the rest of Argentina. Much of the work is remote."}},
+    {"@type":"Question","name":"Is this for small companies or only for large ones?","acceptedAnswer":{"@type":"Answer","text":"Both. Some solutions pay off more in a single company and others across branch or franchise networks. What decides the fit is not size but whether there is a concrete business question without an answer, or a manual process repeated every day."}}
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -394,6 +448,31 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 .fcol a,.fcol span{display:block;font-size:13.5px;color:var(--dim);margin-bottom:9px}
 .fbot{margin-top:clamp(40px,6vh,64px);padding-top:22px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:var(--faint)}
 
+/* ---------- titulo de seccion sin lede ---------- */
+.h2gap{margin-bottom:clamp(34px,5vh,56px)}
+
+/* ---------- listas de tecnologias (texto crawleable, no SVG) ---------- */
+.techwrap{margin-top:clamp(34px,5vh,56px);border-top:1px solid var(--rule);padding-top:26px}
+.chiplab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+.chiplab + .chips{margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;border:1px solid var(--rule-2);padding:8px 13px;color:var(--mid);border-radius:2px}
+
+/* ---------- preguntas frecuentes ---------- */
+.faq{border-top:1px solid var(--rule);margin-top:clamp(24px,3.5vh,38px)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 0;display:flex;gap:18px;align-items:baseline;
+  font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.1vw,25px);line-height:1.2;letter-spacing:-.01em;
+  transition:color .2s var(--ease-out);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";margin-left:auto;font-family:var(--mono);font-size:17px;color:var(--accent);flex:0 0 auto;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .fa{padding:0 0 26px;max-width:74ch;color:var(--dim);font-size:15px;line-height:1.62}
+.faq .fa b{color:var(--fg);font-weight:500}
+@media (hover:hover) and (pointer:fine){ .faq summary:hover{color:var(--accent)} }
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
 .rv.in{opacity:1;transform:none}
@@ -467,14 +546,15 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     <span class="bn">CAT <span>Consultores</span></span>
   </a>
   <nav class="navlinks" id="nav">
-    <a href="#que-es">Qué es <span class="kc">RaaS</span></a>
+    <a href="#que-es">What is <span class="kc">RaaS</span></a>
     <a href="#linea"><span class="kc">SaaS</span> vs <span class="kc">RaaS</span></a>
-    <a href="#resultados">Resultados</a>
-    <a href="#vivo">En vivo</a>
-    <a href="#maquinaria">La maquinaria</a>
-    <a class="navcta" href="#contacto">Hablemos</a>
+    <a href="#resultados">Results</a>
+    <a href="#vivo">Live</a>
+    <a href="#maquinaria">The machinery</a>
+    <a href="../" hreflang="es-AR" lang="es">ES</a>
+    <a class="navcta" href="#contacto">Talk to us</a>
   </nav>
-  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menú</button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
 </header>
 
 <main>
@@ -482,40 +562,40 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
   <div class="wrap">
-    <div class="mono eyebrow rv">Resultados como Servicio · <span class="kc">RaaS</span> · CAT Consultores desde 2015</div>
+    <div class="mono eyebrow rv">Results as a Service · <span class="kc">RaaS</span> · CAT Consultores since 2015</div>
 
     <h1 class="serif" id="h1">
-      <span class="off">No te vendemos</span><br/>
-      <span class="off strike">la herramienta.</span><br/>
-      <span class="reveal">Te entregamos<br/><em>el resultado</em>.</span>
+      <span class="off">We don’t sell you</span><br/>
+      <span class="off strike">the tool.</span><br/>
+      <span class="reveal">We deliver<br/><em>the result</em>.</span>
     </h1>
 
-    <p class="sub rv">Hace once años que construimos tableros, integraciones y sistemas a medida.
-      Y en once años nadie nos llamó porque quisiera un tablero: llamó porque necesitaba
-      <b>saber algo a tiempo</b>, <b>dejar de perder plata</b> o <b>dejar de hacer algo a mano</b>.
-      Eso es lo que entregamos. La herramienta es el medio, no el producto.</p>
+    <p class="sub rv">For eleven years we have been building dashboards, integrations and custom systems.
+      And in eleven years nobody ever called us because they wanted a dashboard: they called because they needed
+      <b>to know something in time</b>, <b>to stop losing money</b> or <b>to stop doing something by hand</b>.
+      That is what we deliver, and we call it <b>Results as a Service</b>: the tool is the means, not the product.</p>
 
     <div class="actions rv">
-      <a class="btn solid" href="#que-es">Qué es <span class="kc">RaaS</span> ↓</a>
-      <a class="btn ghost" href="#vivo">Ver un resultado en vivo</a>
+      <a class="btn solid" href="#que-es">What is <span class="kc">RaaS</span> ↓</a>
+      <a class="btn ghost" href="#vivo">See a live result</a>
     </div>
 
     <div class="vs rv">
       <div class="vsrow">
         <span class="k">SaaS</span>
-        <span class="v">Te alquila el software. Convertirlo en resultado corre por tu cuenta.</span>
+        <span class="v">Rents you the software. Turning it into a result is on you.</span>
       </div>
       <div class="vsrow on">
         <span class="k">RaaS</span>
-        <span class="v">El resultado es el entregable. El software es problema nuestro.</span>
+        <span class="v">The result is the deliverable. The software is our problem.</span>
       </div>
     </div>
 
     <div class="stats rv" id="stats">
-      <div class="stat"><span class="n serif num" data-to="11">0</span><span class="l mono">Años operando</span></div>
-      <div class="stat"><span class="n serif num" data-to="50" data-suffix="+">0</span><span class="l mono">Soluciones en producción</span></div>
-      <div class="stat"><span class="n serif num" data-to="12">0</span><span class="l mono">Fuentes integrables</span></div>
-      <div class="stat"><span class="n serif">2–4</span><span class="l mono">Semanas al primer resultado</span></div>
+      <div class="stat"><span class="n serif num" data-to="11">0</span><span class="l mono">Years in business</span></div>
+      <div class="stat"><span class="n serif num" data-to="50" data-suffix="+">0</span><span class="l mono">Solutions in production</span></div>
+      <div class="stat"><span class="n serif num" data-to="12">0</span><span class="l mono">Integrable sources</span></div>
+      <div class="stat"><span class="n serif">2–4</span><span class="l mono">Weeks to first result</span></div>
     </div>
   </div>
 </section>
@@ -524,42 +604,42 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec" id="cambio">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">01 / El cambio de foco</span>
-      <span class="mono">Qué compra en realidad un cliente</span>
-      <span class="mono m">Resultados como servicio</span>
+      <span class="mono ix">01 / The shift</span>
+      <span class="mono">What a client actually buys</span>
+      <span class="mono m">Results as a service</span>
     </div>
 
-    <h2 class="rv">Un tablero no es un resultado. Es una pantalla donde <em>se ve</em> un resultado.</h2>
-    <p class="lede rv">El día que se entrega un tablero, el cliente todavía no ganó nada. Gana el lunes a la
-      mañana, cuando alguien mira un número que antes no existía y cambia una decisión. <b>Ese lunes es el
-      producto.</b> Todo lo demás —el modelo de datos, las medidas, la integración, el servidor, el
-      mantenimiento— es la fábrica: necesaria, invisible y nuestra.</p>
+    <h2 class="rv">A dashboard is not a result. It is a screen where a result <em>can be seen</em>.</h2>
+    <p class="lede rv">The day a dashboard is handed over, the client has not gained anything yet. They gain on Monday
+      morning, when someone looks at a number that did not exist before and changes a decision. <b>That Monday
+      is the product.</b> Everything else, the data model, the measures, the integration, the server, the
+      maintenance, is the factory: necessary, invisible and ours.</p>
 
     <div class="swap" id="swap">
       <div class="swaprow">
-        <span class="old">«Te entrego un tablero de ventas.»</span>
+        <span class="old">“I’ll hand you a sales dashboard.”</span>
         <span class="ar">→</span>
-        <span class="new">Sabés cada lunes qué te está dejando plata y qué te la está sacando.</span>
+        <span class="new">Every Monday you know what is making you money and what is draining it.</span>
       </div>
       <div class="swaprow">
-        <span class="old">«Te entrego una integración con el ERP.»</span>
+        <span class="old">“I’ll hand you an ERP integration.”</span>
         <span class="ar">→</span>
-        <span class="new">Nadie vuelve a copiar y pegar la venta del día.</span>
+        <span class="new">Nobody copies and pastes the day’s sales again.</span>
       </div>
       <div class="swaprow">
-        <span class="old">«Te entrego un módulo de costos.»</span>
+        <span class="old">“I’ll hand you a costing module.”</span>
         <span class="ar">→</span>
-        <span class="new">Ponés precio sabiendo el margen, no a ojo.</span>
+        <span class="new">You price knowing the margin, not by eye.</span>
       </div>
       <div class="swaprow">
-        <span class="old">«Te entrego un sitio con tienda online.»</span>
+        <span class="old">“I’ll hand you a site with an online store.”</span>
         <span class="ar">→</span>
-        <span class="new">Te entran pedidos sin que suene el teléfono.</span>
+        <span class="new">Orders come in without the phone ringing.</span>
       </div>
       <div class="swaprow">
-        <span class="old">«Te entrego el informe mensual.»</span>
+        <span class="old">“I’ll hand you the monthly report.”</span>
         <span class="ar">→</span>
-        <span class="new">El número está antes de que lo pidas, y avisa solo cuando se sale de rango.</span>
+        <span class="new">The number is there before you ask, and it flags itself when it goes out of range.</span>
       </div>
     </div>
   </div>
@@ -569,54 +649,56 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec alt" id="que-es">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">02 / Qué es</span>
-      <span class="mono">La definición, en castellano</span>
+      <span class="mono ix">02 / What it is</span>
+      <span class="mono">The definition, in plain words</span>
       <span class="mono m"><span class="kc">RaaS</span> · Results as a Service</span>
     </div>
+
+    <h2 class="rv h2gap">What Results as a Service is.</h2>
 
     <div class="defgrid">
       <div class="rv">
         <div class="defbox">
-          <span class="term">Resultados como Servicio · <span class="kc">RaaS</span></span>
-          <p class="body">Un modelo donde lo que se contrata no es una herramienta ni un proyecto con fecha
-            de cierre, sino <em>un resultado de negocio concreto</em>, sostenido en el tiempo. Elegir la
-            tecnología, armarla, operarla y mantenerla viva queda de nuestro lado.</p>
+          <span class="term">Results as a Service · <span class="kc">RaaS</span></span>
+          <p class="body">A model where what you contract is not a tool or a project with a closing date, but
+            <em>a concrete business result</em>, sustained over time. Choosing the technology, building it,
+            running it and keeping it alive stays on our side.</p>
         </div>
-        <p class="defnote">En inglés se lo llama <b>Results as a Service</b>. La sigla nació por analogía con
-          SaaS, PaaS e IaaS, la familia de modelos «as a service» del mundo del software, y corre el punto de
-          venta un escalón más arriba: del programa, al efecto del programa.</p>
+        <p class="defnote">In Spanish we call it <b>Resultados como Servicio</b>. The acronym was coined by analogy
+          with SaaS, PaaS and IaaS, the “as a service” family of the software world, and it moves the point
+          of sale one step up: from the program to the effect of the program.</p>
       </div>
 
       <div class="rv">
         <div class="ladder" id="ladder">
           <button class="rung" data-f=".18" aria-pressed="false">
-            <span class="top"><span class="k">IaaS</span><span class="v">Te dan el servidor. Todo lo que corre arriba lo armás vos.</span></span>
+            <span class="top"><span class="k">IaaS</span><span class="v">You get the server. Everything running on top is yours to build.</span></span>
             <span class="meter"><i></i></span>
-            <span class="cap">Hace el proveedor: la infraestructura</span>
+            <span class="cap">Provider covers: the infrastructure</span>
           </button>
           <button class="rung" data-f=".34" aria-pressed="false">
-            <span class="top"><span class="k">PaaS</span><span class="v">Te dan dónde correr tu sistema. El sistema sigue siendo tuyo.</span></span>
+            <span class="top"><span class="k">PaaS</span><span class="v">You get somewhere to run your system. The system is still yours.</span></span>
             <span class="meter"><i></i></span>
-            <span class="cap">Hace el proveedor: infraestructura y plataforma</span>
+            <span class="cap">Provider covers: infrastructure and platform</span>
           </button>
           <button class="rung" data-f=".55" aria-pressed="false">
-            <span class="top"><span class="k">SaaS</span><span class="v">Te dan el programa hecho. Aprenderlo, cargarlo y sacarle provecho es tu trabajo.</span></span>
+            <span class="top"><span class="k">SaaS</span><span class="v">You get the finished program. Learning it, feeding it and getting value from it is your job.</span></span>
             <span class="meter"><i></i></span>
-            <span class="cap">Hace el proveedor: hasta el programa</span>
+            <span class="cap">Provider covers: up to the program</span>
           </button>
           <button class="rung" data-f="1" aria-pressed="true">
-            <span class="top"><span class="k kc">RaaS</span><span class="v">Te dan lo que ibas a hacer con el programa.</span></span>
+            <span class="top"><span class="k kc">RaaS</span><span class="v">You get what you were going to do with the program.</span></span>
             <span class="meter"><i></i></span>
-            <span class="cap">Hace el proveedor: hasta el resultado</span>
+            <span class="cap">Provider covers: all the way to the result</span>
           </button>
         </div>
       </div>
     </div>
 
     <div class="analogy rv">
-      <p class="serif">SaaS te alquila el auto. La consultoría clásica te lo arma a medida y te da las
-        llaves. <em>RaaS te lleva a destino.</em></p>
-      <div class="cap">La diferencia no es la tecnología. Es dónde termina la responsabilidad.</div>
+      <p class="serif">SaaS rents you the car. Classic consulting builds it to measure and hands you the
+        keys. <em>RaaS drives you to the destination.</em></p>
+      <div class="cap">The difference is not the technology. It is where responsibility ends.</div>
     </div>
   </div>
 </section>
@@ -626,48 +708,48 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   <div class="wrap">
     <div class="sechead">
       <span class="mono ix">03 / <span class="kc">SaaS</span> vs <span class="kc">RaaS</span></span>
-      <span class="mono">Dónde termina la responsabilidad</span>
-      <span class="mono m">Tocá cada modelo</span>
+      <span class="mono">Where responsibility ends</span>
+      <span class="mono m">Tap each model</span>
     </div>
 
-    <h2 class="rv">La misma cadena. Cambia <em>dónde</em> te sueltan la mano.</h2>
-    <p class="lede rv">Entre el dato crudo y el número que te sirve hay seis tramos de trabajo. Lo único
-      que cambia de un modelo a otro es cuántos hace el proveedor y cuántos terminás haciendo vos.</p>
+    <h2 class="rv">The same chain. What changes is <em>where</em> they let go of your hand.</h2>
+    <p class="lede rv">Between raw data and the number you can use there are six stretches of work. The only
+      thing that changes from one model to the next is how many the provider does and how many you end up doing.</p>
 
     <div class="tabs rv" role="tablist" aria-label="Modelos">
       <button class="tab" role="tab" data-mode="saas" aria-selected="false"><span class="kc">SaaS</span></button>
-      <button class="tab" role="tab" data-mode="cons" aria-selected="false">Consultoría clásica</button>
+      <button class="tab" role="tab" data-mode="cons" aria-selected="false">Classic consulting</button>
       <button class="tab" role="tab" data-mode="raas" aria-selected="true"><span class="kc">RaaS</span></button>
     </div>
 
     <div class="chain rv" id="chain">
       <div class="chaintrack">
-        <div class="node"><div class="nn">01</div><div class="nt">Conseguir el dato</div><div class="nb">Que exista, que esté limpio y que llegue todos los días.</div></div>
-        <div class="node"><div class="nn">02</div><div class="nt">La herramienta</div><div class="nb">El tablero, el sistema, la integración, la web.</div></div>
-        <div class="node"><div class="nn">03</div><div class="nt">Ponerla a punto</div><div class="nb">Para tu negocio, no para el negocio promedio.</div></div>
-        <div class="node"><div class="nn">04</div><div class="nt">Operarla</div><div class="nb">Que corra todos los días sin que nadie se acuerde de ella.</div></div>
-        <div class="node"><div class="nn">05</div><div class="nt">Que siga sirviendo</div><div class="nb">El negocio cambia; la herramienta tiene que cambiar con él.</div></div>
-        <div class="node"><div class="nn">06</div><div class="nt">El número en la mano</div><div class="nb">Alguien lo mira el lunes y sabe qué hacer.</div></div>
+        <div class="node"><div class="nn">01</div><div class="nt">Getting the data</div><div class="nb">That it exists, that it is clean and that it arrives every day.</div></div>
+        <div class="node"><div class="nn">02</div><div class="nt">The tool</div><div class="nb">The dashboard, the system, the integration, the site.</div></div>
+        <div class="node"><div class="nn">03</div><div class="nt">Tuning it</div><div class="nb">For your business, not the average business.</div></div>
+        <div class="node"><div class="nn">04</div><div class="nt">Running it</div><div class="nb">That it runs every day without anyone having to remember it.</div></div>
+        <div class="node"><div class="nn">05</div><div class="nt">Keeping it useful</div><div class="nb">The business changes; the tool has to change with it.</div></div>
+        <div class="node"><div class="nn">06</div><div class="nt">The number in hand</div><div class="nb">Someone looks at it on Monday and knows what to do.</div></div>
       </div>
       <div class="owner" id="owner">
-        <span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span>
+        <span><b>Yours</b></span><span><b>Yours</b></span><span><b>Yours</b></span><span><b>Yours</b></span><span><b>Yours</b></span><span><b>Yours</b></span>
       </div>
 
       <div class="chaincap">
         <span class="tagn" id="capTag">RaaS</span>
-        <p id="capTxt">Nos hacemos cargo de la cadena entera y de que siga funcionando el mes que viene. Lo
-          que te llega es el número listo para usar, no la tarea de producirlo.</p>
+        <p id="capTxt">We take on the whole chain and on keeping it working next month. What reaches you is
+          the number ready to use, not the task of producing it.</p>
       </div>
 
       <div class="tally">
         <span class="big serif num" id="tallyN">0</span>
-        <span class="txt">de 6 tramos <span id="tallyT">siguen siendo tuyos</span>.</span>
+        <span class="txt">of 6 stretches <span id="tallyT">are still yours</span>.</span>
       </div>
 
       <div class="decision">
-        <span class="d1 serif">La decisión, en los tres modelos, es siempre tuya.</span>
-        <span class="d2">Los datos no deciden: las personas deciden con datos. Nuestro trabajo es que lleguen
-          a esa decisión con algo en la mano, y que no dependan de nosotros para leerlo.</span>
+        <span class="d1 serif">The decision, in all three models, is always yours.</span>
+        <span class="d2">Data does not decide: people decide with data. Our job is that they reach that
+          decision with something in hand, and that they do not depend on us to read it.</span>
       </div>
     </div>
   </div>
@@ -677,65 +759,65 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec alt" id="comparativa">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">04 / Comparativa</span>
-      <span class="mono">Tres formas de contratar lo mismo</span>
-      <span class="mono m"><span class="kc">SaaS</span> · Consultoría · <span class="kc">RaaS</span></span>
+      <span class="mono ix">04 / Comparison</span>
+      <span class="mono">Three ways to buy the same thing</span>
+      <span class="mono m"><span class="kc">SaaS</span> · Consulting · <span class="kc">RaaS</span></span>
     </div>
 
-    <h2 class="rv">Tres maneras de pagar por <em>casi</em> lo mismo.</h2>
+    <h2 class="rv">Three ways of paying for <em>almost</em> the same thing.</h2>
 
     <div class="rv" style="overflow-x:auto">
       <table class="cmp">
         <thead>
           <tr>
             <th class="rowk"></th>
-            <th class="h">SaaS<small>Software como servicio</small></th>
-            <th class="h">Consultoría clásica<small>Proyecto con fecha</small></th>
-            <th class="h raas">RaaS<small>Resultados como servicio</small></th>
+            <th class="h">SaaS<small>Software as a service</small></th>
+            <th class="h">Classic consulting<small>Project with a date</small></th>
+            <th class="h raas">RaaS<small>Results as a service</small></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th class="rowk">Qué contratás</th>
-            <td data-k="Qué contratás" data-m="SaaS">Acceso a un software que ya existe</td>
-            <td data-k="Qué contratás" data-m="Consultoría">Horas de un especialista</td>
-            <td class="raas" data-k="Qué contratás" data-m="RaaS">Un resultado de negocio concreto</td>
+            <th class="rowk">What you contract</th>
+            <td data-k="What you contract" data-m="SaaS">Access to software that already exists</td>
+            <td data-k="What you contract" data-m="Consulting">Hours of a specialist</td>
+            <td class="raas" data-k="What you contract" data-m="RaaS">A concrete business result</td>
           </tr>
           <tr>
-            <th class="rowk">Qué te llega</th>
-            <td data-k="Qué te llega" data-m="SaaS">Un usuario y una contraseña</td>
-            <td data-k="Qué te llega" data-m="Consultoría">Un entregable y un informe</td>
-            <td class="raas" data-k="Qué te llega" data-m="RaaS">Un número que se mueve, no un entregable que se archiva</td>
+            <th class="rowk">What reaches you</th>
+            <td data-k="What reaches you" data-m="SaaS">A username and a password</td>
+            <td data-k="What reaches you" data-m="Consulting">A deliverable and a report</td>
+            <td class="raas" data-k="What reaches you" data-m="RaaS">A number that moves, not a deliverable that gets filed</td>
           </tr>
           <tr>
-            <th class="rowk">Quién trabaja</th>
-            <td data-k="Quién trabaja" data-m="SaaS">Vos y tu equipo, todos los días</td>
-            <td data-k="Quién trabaja" data-m="Consultoría">El consultor, mientras dura el proyecto</td>
-            <td class="raas" data-k="Quién trabaja" data-m="RaaS">Nosotros, de forma continua</td>
+            <th class="rowk">Who does the work</th>
+            <td data-k="Who does the work" data-m="SaaS">You and your team, every day</td>
+            <td data-k="Who does the work" data-m="Consulting">The consultant, while the project lasts</td>
+            <td class="raas" data-k="Who does the work" data-m="RaaS">We do, continuously</td>
           </tr>
           <tr>
-            <th class="rowk">Cuándo termina</th>
-            <td data-k="Cuándo termina" data-m="SaaS">Cuando dejás de pagar la licencia</td>
-            <td data-k="Cuándo termina" data-m="Consultoría">El día de la entrega</td>
-            <td class="raas" data-k="Cuándo termina" data-m="RaaS">No termina: se sostiene y se ajusta</td>
+            <th class="rowk">When it ends</th>
+            <td data-k="When it ends" data-m="SaaS">When you stop paying the licence</td>
+            <td data-k="When it ends" data-m="Consulting">On delivery day</td>
+            <td class="raas" data-k="When it ends" data-m="RaaS">It does not end: it holds and adjusts</td>
           </tr>
           <tr>
-            <th class="rowk">Si no funciona</th>
-            <td data-k="Si no funciona" data-m="SaaS">Es «un problema de adopción». Tuyo.</td>
-            <td data-k="Si no funciona" data-m="Consultoría">Ya se entregó y se cerró. Se recontrata.</td>
-            <td class="raas" data-k="Si no funciona" data-m="RaaS">Nadie lo da por cerrado</td>
+            <th class="rowk">If it does not work</th>
+            <td data-k="If it does not work" data-m="SaaS">It is “an adoption problem”. Yours.</td>
+            <td data-k="If it does not work" data-m="Consulting">It was delivered and closed. You hire again.</td>
+            <td class="raas" data-k="If it does not work" data-m="RaaS">Nobody calls it closed</td>
           </tr>
           <tr>
-            <th class="rowk">Qué se mide</th>
-            <td data-k="Qué se mide" data-m="SaaS">Usuarios activos, uso de la licencia</td>
-            <td data-k="Qué se mide" data-m="Consultoría">Que el proyecto salga en fecha</td>
-            <td class="raas" data-k="Qué se mide" data-m="RaaS">Que la pregunta del principio tenga respuesta sin que la pidas</td>
+            <th class="rowk">What gets measured</th>
+            <td data-k="What gets measured" data-m="SaaS">Active users, licence usage</td>
+            <td data-k="What gets measured" data-m="Consulting">That the project ships on time</td>
+            <td class="raas" data-k="What gets measured" data-m="RaaS">That the original question has an answer without you asking for it</td>
           </tr>
           <tr>
-            <th class="rowk">A qué se parece</th>
-            <td data-k="A qué se parece" data-m="SaaS">Alquilar la máquina</td>
-            <td data-k="A qué se parece" data-m="Consultoría">Encargar la obra</td>
-            <td class="raas" data-k="A qué se parece" data-m="RaaS">Contratar el resultado de la obra</td>
+            <th class="rowk">What it is like</th>
+            <td data-k="What it is like" data-m="SaaS">Renting the machine</td>
+            <td data-k="What it is like" data-m="Consulting">Commissioning the build</td>
+            <td class="raas" data-k="What it is like" data-m="RaaS">Contracting the outcome of the build</td>
           </tr>
         </tbody>
       </table>
@@ -747,53 +829,53 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec" id="resultados">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">05 / Resultados</span>
-      <span class="mono">Qué entregamos, dicho en resultados</span>
-      <span class="mono m">Ver · Ahorrar · Ganar</span>
+      <span class="mono ix">05 / Results</span>
+      <span class="mono">What we deliver, said as results</span>
+      <span class="mono m">See · Save · Earn</span>
     </div>
 
-    <h2 class="rv">Casi todo lo que nos piden es <em>una de estas tres</em> cosas.</h2>
-    <p class="lede rv">Cambia el rubro, cambia el tamaño, cambia la tecnología. El resultado que se busca,
-      casi nunca.</p>
+    <h2 class="rv">Almost everything we are asked for is <em>one of these three</em> things.</h2>
+    <p class="lede rv">The industry changes, the size changes, the technology changes. The result being
+      sought, almost never.</p>
 
     <div class="rescards">
       <article class="rescard rv">
-        <div class="rn">R.01 · Ver</div>
-        <h3>Saber en qué estás parado.</h3>
-        <p>Un número por pregunta, el mismo para todos, actualizado sin que nadie lo arme a mano.</p>
+        <div class="rn">R.01 · See</div>
+        <h3>Knowing where you stand.</h3>
+        <p>One number per question, the same for everyone, updated without anyone building it by hand.</p>
         <ul>
-          <li>El mismo número en todas las pantallas</li>
-          <li>El cierre del día sin esperar a nadie</li>
-          <li>Alertas cuando algo se sale de rango</li>
-          <li>Un diccionario de negocio, no diez criterios</li>
+          <li>The same number on every screen</li>
+          <li>The daily close without waiting for anyone</li>
+          <li>Alerts when something goes out of range</li>
+          <li>One business dictionary, not ten criteria</li>
         </ul>
-        <div class="how">El cómo · Power BI · modelo de datos unificado · integraciones · paneles a medida</div>
+        <div class="how">The how · Power BI · unified data model · integrations · custom panels</div>
       </article>
 
       <article class="rescard rv">
-        <div class="rn">R.02 · Ahorrar</div>
-        <h3>Dejar de hacerlo a mano.</h3>
-        <p>Trabajo que hoy hace una persona todos los días y mañana no lo hace nadie, porque ya está hecho.</p>
+        <div class="rn">R.02 · Save</div>
+        <h3>Stop doing it by hand.</h3>
+        <p>Work that one person does every day today and nobody does tomorrow, because it is already done.</p>
         <ul>
-          <li>Cargas e importaciones que corren solas</li>
-          <li>Controles que avisan, en vez de auditar tarde</li>
-          <li>Un ERP viejo, abierto en el navegador</li>
-          <li>Procesos que dejan de depender de una sola persona</li>
+          <li>Uploads and imports that run themselves</li>
+          <li>Controls that warn, instead of auditing too late</li>
+          <li>A legacy ERP, opened in the browser</li>
+          <li>Processes that stop depending on a single person</li>
         </ul>
-        <div class="how">El cómo · automatizaciones · integración con ERP y punto de venta · portales de captura · IA donde agrega</div>
+        <div class="how">The how · automation · ERP and point of sale integration · data capture portals · AI where it adds</div>
       </article>
 
       <article class="rescard rv">
-        <div class="rn">R.03 · Ganar</div>
-        <h3>Cobrar mejor y vender más.</h3>
-        <p>Decisiones comerciales tomadas con el margen a la vista, y canales propios que no dependen de una plataforma ajena.</p>
+        <div class="rn">R.03 · Earn</div>
+        <h3>Charge better and sell more.</h3>
+        <p>Commercial decisions made with the margin in sight, and your own channels that do not depend on somebody else’s platform.</p>
         <ul>
-          <li>Costos y márgenes al día, por producto</li>
-          <li>Precios mirando a la competencia</li>
-          <li>Sitio y tienda propios, sin alquiler de por medio</li>
-          <li>Reseñas y reputación bajo control</li>
+          <li>Costs and margins up to date, by product</li>
+          <li>Pricing with an eye on the competition</li>
+          <li>Your own site and store, with no rent in between</li>
+          <li>Reviews and reputation under control</li>
         </ul>
-        <div class="how">El cómo · costeo y márgenes · control de precios · sitio y tienda a medida · reseñas y campañas</div>
+        <div class="how">The how · costing and margins · price monitoring · custom site and store · reviews and campaigns</div>
       </article>
     </div>
   </div>
@@ -803,49 +885,49 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec alt" id="vivo">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">06 / En vivo</span>
-      <span class="mono">Un resultado, no una captura</span>
-      <span class="mono m">Tocá los filtros</span>
+      <span class="mono ix">06 / Live</span>
+      <span class="mono">A result, not a screenshot</span>
+      <span class="mono m">Touch the filters</span>
     </div>
 
-    <h2 class="rv">Esto no es una imagen. <em>Recalcula</em> mientras lo tocás.</h2>
-    <p class="lede rv">Corre en tu navegador, con datos de ejemplo. Movés un filtro y se recalculan los
-      números, la serie y las alertas. Así es como llega un resultado cuando está bien hecho: <b>no hay que
-      pedirlo, ni esperar a que alguien lo arme.</b></p>
+    <h2 class="rv">This is not an image. It <em>recalculates</em> as you touch it.</h2>
+    <p class="lede rv">It runs in your browser, on sample data. Move a filter and the numbers, the series
+      and the alerts recalculate. That is how a result arrives when it is done well: <b>you do not have to ask
+      for it, or wait for someone to build it.</b></p>
 
     <div class="board rv" id="board">
       <div class="boardbar" role="tablist" aria-label="Área">
-        <button class="bt" role="tab" data-tab="0" aria-selected="true">Ventas</button>
-        <button class="bt" role="tab" data-tab="1" aria-selected="false">Operaciones</button>
+        <button class="bt" role="tab" data-tab="0" aria-selected="true">Sales</button>
+        <button class="bt" role="tab" data-tab="1" aria-selected="false">Operations</button>
         <button class="bt" role="tab" data-tab="2" aria-selected="false">Marketing</button>
-        <span class="state" id="bstate">Actualizado</span>
+        <span class="state" id="bstate">Up to date</span>
       </div>
 
       <div class="boardbody">
         <div class="filters">
-          <p class="flab">Período</p>
+          <p class="flab">Period</p>
           <div class="fgroup" id="fperiod"></div>
-          <p class="flab">Región</p>
+          <p class="flab">Region</p>
           <div class="fgroup" id="fregion"></div>
-          <p class="flab">Segmento</p>
+          <p class="flab">Segment</p>
           <div class="fgroup" id="fsegment"></div>
           <div class="meta">
-            <div><span>Filas leídas</span><b id="mrows">0</b></div>
-            <div><span>Fuentes</span><b id="msrc">0</b></div>
-            <div><span>Última lectura</span><b id="mtime">--:--</b></div>
+            <div><span>Rows read</span><b id="mrows">0</b></div>
+            <div><span>Sources</span><b id="msrc">0</b></div>
+            <div><span>Last read</span><b id="mtime">--:--</b></div>
           </div>
         </div>
 
         <div class="canvas">
           <div class="kpis" id="kpis">
-            <div class="kpi"><div class="kl">Ingresos</div><div class="kv num" data-kpi="rev">0</div><div class="kd" data-d="rev"></div></div>
-            <div class="kpi"><div class="kl">Operaciones</div><div class="kv num" data-kpi="deals">0</div><div class="kd" data-d="deals"></div></div>
-            <div class="kpi"><div class="kl">Ticket promedio</div><div class="kv num" data-kpi="avg">0</div><div class="kd" data-d="avg"></div></div>
-            <div class="kpi"><div class="kl">Conversión</div><div class="kv num" data-kpi="conv">0</div><div class="kd" data-d="conv"></div></div>
+            <div class="kpi"><div class="kl">Revenue</div><div class="kv num" data-kpi="rev">0</div><div class="kd" data-d="rev"></div></div>
+            <div class="kpi"><div class="kl">Deals</div><div class="kv num" data-kpi="deals">0</div><div class="kd" data-d="deals"></div></div>
+            <div class="kpi"><div class="kl">Average ticket</div><div class="kv num" data-kpi="avg">0</div><div class="kd" data-d="avg"></div></div>
+            <div class="kpi"><div class="kl">Conversion</div><div class="kv num" data-kpi="conv">0</div><div class="kd" data-d="conv"></div></div>
           </div>
 
           <div class="chartwrap">
-            <div class="charthead"><span id="chtitle">Tendencia · ingresos</span><span>Recorré la serie</span></div>
+            <div class="charthead"><span id="chtitle">Trend · revenue</span><span>Scrub the series</span></div>
             <div class="chartbox" id="chartbox">
               <svg id="chart" viewBox="0 0 600 190" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
@@ -869,7 +951,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
           <div class="bars" id="bars"></div>
 
           <div class="insights" id="insights"></div>
-          <div class="boardnote">Datos de ejemplo. En producción las mismas pantallas leen tus fuentes reales.</div>
+          <div class="boardnote">Sample data. In production the same screens read your real sources.</div>
         </div>
       </div>
     </div>
@@ -880,31 +962,48 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec" id="maquinaria">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">07 / La maquinaria</span>
-      <span class="mono">Lo que no se ve, pero está</span>
-      <span class="mono m">12+ fuentes integrables</span>
+      <span class="mono ix">07 / The machinery</span>
+      <span class="mono">What you do not see, but is there</span>
+      <span class="mono m">12+ integrable sources</span>
     </div>
 
     <div class="machine">
       <div class="rv">
-        <h2>Nada de esto es magia. <em>Abajo</em> hay un stack.</h2>
-        <p class="lede">El RaaS no elimina el trabajo técnico: lo corre de lugar. Que no lo veas no significa
-          que no esté, así que lo dejamos escrito. No importa dónde vivan hoy tus números, una planilla en
-          OneDrive, un ERP vetusto, la API del ecommerce o la campaña de la semana pasada: se ordenan, se
-          relacionan y se convierten en una sola verdad.</p>
+        <h2>None of this is magic. <em>Underneath</em> there is a stack.</h2>
+        <p class="lede">RaaS does not remove the technical work: it moves it. Not seeing it does not mean it
+          is not there, so here it is in writing. It does not matter where your numbers live today, a
+          spreadsheet on OneDrive, a legacy ERP, the ecommerce API or last week’s campaign: they get ordered,
+          related and turned into a single truth.</p>
       </div>
 
       <div class="rv">
-        <div class="stackrow"><span class="k">Datos</span><span class="v">Modelo unificado, medidas versionadas y un diccionario de negocio único. Un número, un criterio.</span></div>
-        <div class="stackrow"><span class="k">Tableros</span><span class="v">Power BI de punta a punta: modelado, DAX, permisos por rol, drill-down y distribución.</span></div>
-        <div class="stackrow"><span class="k">Desarrollo</span><span class="v">Web, tienda, aplicaciones de escritorio e intranets a medida. Lo que la herramienta comprada no cubre.</span></div>
-        <div class="stackrow"><span class="k">Integración</span><span class="v">ERP, punto de venta, ecommerce y campañas. Cargas automáticas, conciliación y control de excepciones.</span></div>
-        <div class="stackrow"><span class="k">IA</span><span class="v">Donde agrega, no donde decora: asistentes sobre datos propios, clasificación de texto libre, lectura de documentos. Siempre con la última palabra en una persona.</span></div>
-        <div class="stackrow"><span class="k">Entrega</span><span class="v">MVP funcional en 2 a 4 semanas y ajustes desde la primera semana, no al final del proyecto.</span></div>
+        <div class="stackrow"><span class="k">Data</span><span class="v">Unified model, versioned measures and a single business dictionary. One number, one criterion.</span></div>
+        <div class="stackrow"><span class="k">Dashboards</span><span class="v">Power BI end to end: modelling, DAX, role permissions, drill-down and distribution.</span></div>
+        <div class="stackrow"><span class="k">Development</span><span class="v">Web, store, desktop applications and custom intranets. Whatever the off-the-shelf tool does not cover.</span></div>
+        <div class="stackrow"><span class="k">Integration</span><span class="v">ERP, point of sale, ecommerce and campaigns. Automatic loads, reconciliation and exception control.</span></div>
+        <div class="stackrow"><span class="k">AI</span><span class="v">Where it adds, not where it decorates: assistants over your own data, free-text classification, document reading. Always with the last word on a person.</span></div>
+        <div class="stackrow"><span class="k">Delivery</span><span class="v">Working MVP in 2 to 4 weeks and adjustments from the first week, not at the end of the project.</span></div>
       </div>
     </div>
 
-    <div class="pipe rv" id="pipe" aria-label="Doce fuentes de datos convergen en un modelo unificado y salen como resultados"></div>
+    <div class="techwrap rv">
+      <p class="chiplab">Data sources we integrate</p>
+      <div class="chips">
+        <span class="chip">Excel</span><span class="chip">SQL Server</span><span class="chip">MySQL</span>
+        <span class="chip">PostgreSQL</span><span class="chip">Google Analytics</span><span class="chip">Meta Ads</span>
+        <span class="chip">Google Sheets</span><span class="chip">SharePoint</span><span class="chip">CSV / TXT</span>
+        <span class="chip">APIs REST</span><span class="chip">Web scraping</span><span class="chip">Dataverse</span>
+      </div>
+      <p class="chiplab">Custom development stack</p>
+      <div class="chips">
+        <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span>
+        <span class="chip">Node</span><span class="chip">Python</span><span class="chip">FastAPI</span>
+        <span class="chip">Flask</span><span class="chip">.NET</span><span class="chip">PostgreSQL</span>
+        <span class="chip">MySQL</span><span class="chip">GraphQL</span><span class="chip">Power BI</span>
+      </div>
+    </div>
+
+    <div class="pipe rv" id="pipe" aria-label="Twelve data sources converge into a unified model and come out as results"></div>
   </div>
 </section>
 
@@ -912,21 +1011,21 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec alt" id="como">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">08 / Cómo trabajamos</span>
-      <span class="mono">Del pedido al resultado</span>
-      <span class="mono m">5 fases · la última no cierra</span>
+      <span class="mono ix">08 / How we work</span>
+      <span class="mono">From the request to the result</span>
+      <span class="mono m">5 phases · the last one never closes</span>
     </div>
 
-    <h2 class="rv">Un proceso que <em>no</em> tiene fecha de cierre.</h2>
-    <p class="lede rv">En un proyecto, la última fase es la entrega. Acá la última fase es la que nunca
-      termina: es la que convierte una herramienta entregada en un resultado que se sostiene.</p>
+    <h2 class="rv">A process with <em>no</em> closing date.</h2>
+    <p class="lede rv">In a project, the last phase is delivery. Here the last phase is the one that never
+      ends: it is the one that turns a delivered tool into a result that holds.</p>
 
     <div class="steps">
-      <div class="step rv"><div class="w">Semana 01</div><div class="n serif">01</div><h3>Acordar la pregunta</h3><p>Qué tiene que poder responder el negocio, y quién va a usar esa respuesta para decidir.</p></div>
-      <div class="step rv"><div class="w">Semana 01–02</div><div class="n serif">02</div><h3>Mapear</h3><p>De dónde sale hoy ese número. Calidad, frecuencia, acceso, limpieza.</p></div>
-      <div class="step rv"><div class="w">Semana 02–03</div><div class="n serif">03</div><h3>Construir</h3><p>El modelo, el tablero, la integración, la pantalla. Lo que haga falta.</p></div>
-      <div class="step rv"><div class="w">Semana 03–04</div><div class="n serif">04</div><h3>Poner a producir</h3><p>En manos de quien decide, con el equipo capacitado para leerlo solo.</p></div>
-      <div class="step loop rv"><div class="w">Permanente</div><div class="n serif"><span class="spin">↻</span></div><h3>Sostener</h3><p>El negocio cambia y la herramienta cambia con él. Acá no hay entrega final.</p></div>
+      <div class="step rv"><div class="w">Week 01</div><div class="n serif">01</div><h3>Agree the question</h3><p>What the business needs to be able to answer, and who will use that answer to decide.</p></div>
+      <div class="step rv"><div class="w">Week 01–02</div><div class="n serif">02</div><h3>Map</h3><p>Where that number comes from today. Quality, frequency, access, cleanliness.</p></div>
+      <div class="step rv"><div class="w">Week 02–03</div><div class="n serif">03</div><h3>Build</h3><p>The model, the dashboard, the integration, the screen. Whatever it takes.</p></div>
+      <div class="step rv"><div class="w">Week 03–04</div><div class="n serif">04</div><h3>Put into production</h3><p>In the hands of whoever decides, with the team trained to read it alone.</p></div>
+      <div class="step loop rv"><div class="w">Ongoing</div><div class="n serif"><span class="spin">↻</span></div><h3>Sustain</h3><p>The business changes and the tool changes with it. There is no final handover here.</p></div>
     </div>
   </div>
 </section>
@@ -935,67 +1034,131 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 <section class="sec" id="no-es">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">09 / Los límites</span>
-      <span class="mono">Lo que <span class="kc">RaaS</span> no es</span>
-      <span class="mono m">Dicho antes de empezar</span>
+      <span class="mono ix">09 / The limits</span>
+      <span class="mono">What <span class="kc">RaaS</span> is not</span>
+      <span class="mono m">Said before we start</span>
     </div>
 
-    <h2 class="rv">Lo que <em>no</em> es.</h2>
-    <p class="lede rv">Una categoría nueva sirve si aclara. Si además promete de más, deja de servir.</p>
+    <h2 class="rv">What it is <em>not</em>.</h2>
+    <p class="lede rv">A new category is useful if it clarifies. If it also over-promises, it stops being useful.</p>
 
     <div class="nots">
       <div class="not rv">
-        <div class="x">No es · 01</div>
-        <h3>Un software con nombre nuevo.</h3>
-        <p>Si el producto ya estaba hecho y lo único nuevo es el folleto, eso es SaaS con marketing. Acá
-          primero se define el resultado y recién después se elige la herramienta. A veces la herramienta
-          ya existe y no hay que construir nada: también es una respuesta válida.</p>
+        <div class="x">Not · 01</div>
+        <h3>Software with a new name.</h3>
+        <p>If the product was already built and the only new thing is the brochure, that is SaaS with
+          marketing. Here the result is defined first and only then is the tool chosen. Sometimes the tool
+          already exists and nothing needs building: that is a valid answer too.</p>
       </div>
       <div class="not rv">
-        <div class="x">No es · 02</div>
-        <h3>Un reemplazo de tu equipo.</h3>
-        <p>La decisión sigue siendo de las personas que conocen el negocio. Nos hacemos cargo de que tengan
-          con qué decidir y de capacitarlas para que no dependan de nosotros para leerlo.</p>
+        <div class="x">Not · 02</div>
+        <h3>A replacement for your team.</h3>
+        <p>The decision still belongs to the people who know the business. We take on giving them
+          something to decide with, and training them so they do not depend on us to read it.</p>
       </div>
       <div class="not rv">
-        <div class="x">No es · 03</div>
-        <h3>La forma correcta para todo pedido.</h3>
-        <p>Hay trabajos que son un proyecto cerrado y está perfecto que lo sean: una web, una migración,
-          un desarrollo puntual. Cuando es así lo decimos y se trabaja como proyecto, sin disfrazarlo de
-          otra cosa.</p>
+        <div class="x">Not · 03</div>
+        <h3>The right shape for every request.</h3>
+        <p>Some jobs are a closed project and it is perfectly fine that they are: a website, a migration,
+          a one-off development. When that is the case we say so and work it as a project, without dressing
+          it up as something else.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ 10 · CONTACTO ══════════ -->
-<section class="sec alt" id="contacto">
+<!-- ============ 10 - PREGUNTAS FRECUENTES ============ -->
+<section class="sec alt" id="faq">
   <div class="wrap">
     <div class="sechead">
-      <span class="mono ix">10 / Contacto</span>
-      <span class="mono">Hablemos</span>
-      <span class="mono m">Caballito · CABA · ARG</span>
+      <span class="mono ix">10 / FAQ</span>
+      <span class="mono">What we get asked most</span>
+      <span class="mono m">Buenos Aires · Argentina</span>
     </div>
 
-    <h2 class="rv">Contanos qué <em>resultado</em> necesitás.</h2>
-    <p class="lede rv">No hace falta que sepas qué herramienta lo resuelve, ni si hace falta una. Esa parte
-      es nuestra.</p>
+    <h2 class="rv h2gap">Frequently asked questions about RaaS.</h2>
+
+    <div class="faq rv">
+      <details>
+        <summary>What is RaaS or Results as a Service?</summary>
+        <div class="fa"><b>Results as a Service</b> (RaaS) is a model where what you contract is not a tool
+          or a project with a closing date, but a concrete business result, sustained over time. Choosing the
+          technology, building it, running it and keeping it alive stays on the provider’s side. The acronym
+          was coined by analogy with SaaS, PaaS and IaaS, and it moves the point of sale one step up: from the
+          program to the effect of the program.</div>
+      </details>
+      <details>
+        <summary>What is the difference between SaaS and RaaS?</summary>
+        <div class="fa"><b>SaaS</b> gives you access to a program that already exists: learning it,
+          configuring it, feeding it and getting value from it is still your job, and that is where most of
+          the real effort sits. <b>RaaS</b> takes on that whole chain and what it delivers is the result. Put
+          shortly: SaaS rents you the car, RaaS drives you to the destination.</div>
+      </details>
+      <details>
+        <summary>How is it different from traditional consulting?</summary>
+        <div class="fa">Classic consulting sells hours and ends on delivery day. Your business does not: six
+          months later the tool describes a company that has already changed. Under Results as a Service there
+          is no closing date, because the job is for the result <b>to hold</b> and to keep adjusting as the
+          business changes.</div>
+      </details>
+      <details>
+        <summary>Which technologies do you use?</summary>
+        <div class="fa"><b>Power BI</b> for dashboards, data modelling and DAX measures; integrations with
+          ERP, point of sale and ecommerce; and custom development in React, Next.js, TypeScript, Node,
+          Python, .NET, PostgreSQL and MySQL. We integrate more than twelve data sources: Excel, SQL Server,
+          Google Analytics, Meta Ads, SharePoint, Google Sheets, REST APIs and more.</div>
+      </details>
+      <details>
+        <summary>How long until it is up and running?</summary>
+        <div class="fa"><b>Two to four weeks</b> to the first result in production. We work with functioning
+          deliveries from the first week, not a single handover at the end of the project. After that the work
+          continues: the last phase of the process is the one that never closes.</div>
+      </details>
+      <details>
+        <summary>Do you only work in the City of Buenos Aires?</summary>
+        <div class="fa">We are based in <b>Caballito, City of Buenos Aires</b>, and we work with companies
+          across the city, the province of Buenos Aires and the rest of Argentina. Much of the work is remote,
+          so distance is not a limitation: discovery and training sessions happen in person or over video call,
+          whichever suits.</div>
+      </details>
+      <details>
+        <summary>Is this for small companies or only for large ones?</summary>
+        <div class="fa">Both. Some solutions pay off more in a single company and others across branch or
+          franchise networks. What decides the fit is not size but whether there is a <b>concrete business
+          question</b> without an answer today, or a manual process repeated every single day.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 11 · CONTACTO ══════════ -->
+<section class="sec" id="contacto">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">11 / Contact</span>
+      <span class="mono">Let’s talk</span>
+      <span class="mono m">Caballito · Buenos Aires · ARG</span>
+    </div>
+
+    <h2 class="rv">Tell us what <em>result</em> you need.</h2>
+    <p class="lede rv">You do not need to know which tool solves it, or whether one is needed at all. That
+      part is ours.</p>
 
     <div class="contact" style="margin-top:clamp(36px,5vh,60px)">
       <form class="rv" id="frm" novalidate>
-        <label class="field"><span>Nombre</span><input type="text" name="nombre" placeholder="Cómo te llamás" /></label>
-        <label class="field"><span>Email</span><input type="email" name="email" placeholder="Dónde te escribimos" /></label>
-        <label class="field"><span>Empresa</span><input type="text" name="empresa" placeholder="Dónde trabajás" /></label>
-        <label class="field"><span>Qué resultado buscás</span><textarea name="mensaje" rows="4" placeholder="«Quiero saber todos los lunes qué producto me deja margen», «quiero dejar de cargar la venta a mano»…"></textarea></label>
-        <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit">Enviar mensaje</button></div>
-        <div class="formnote" id="frmnote">También podés escribirnos por LinkedIn</div>
+        <label class="field"><span>Name</span><input type="text" name="nombre" placeholder="Your name" /></label>
+        <label class="field"><span>Email</span><input type="email" name="email" placeholder="Where we write back" /></label>
+        <label class="field"><span>Company</span><input type="text" name="empresa" placeholder="Where you work" /></label>
+        <label class="field"><span>What result are you after</span><textarea name="mensaje" rows="4" placeholder="“I want to know every Monday which product leaves me margin”, “I want to stop entering sales by hand”…"></textarea></label>
+        <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit">Send message</button></div>
+        <div class="formnote" id="frmnote">You can also reach us on LinkedIn</div>
       </form>
 
       <div class="rv">
-        <div class="inforow"><span class="k">Ubicación</span><span class="v">Caballito · CABA · Argentina</span></div>
+        <div class="inforow"><span class="k">Location</span><span class="v">Caballito · Buenos Aires · Argentina</span></div>
         <div class="inforow"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/catconsultores</span></div>
-        <div class="inforow"><span class="k">Horario</span><span class="v">Lunes a viernes · 10:00 – 19:00 ART</span></div>
-        <div class="inforow"><span class="k">Desde</span><span class="v">2015 · César Augusto Tiraferri</span></div>
+        <div class="inforow"><span class="k">Hours</span><span class="v">Monday to Friday · 10:00 – 19:00 ART</span></div>
+        <div class="inforow"><span class="k">Since</span><span class="v">2015 · César Augusto Tiraferri</span></div>
       </div>
     </div>
   </div>
@@ -1008,30 +1171,31 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     <div class="fgrid">
       <div>
         <div class="brand"><img src="../assets/logo.png" alt="" /><span class="bn">CAT <span>Consultores</span></span></div>
-        <p class="disc">Por políticas de confidencialidad y resguardo de la información, CAT Consultores se
-          abstiene de mencionar clientes particulares o empresas que hayan contratado nuestros servicios.
-          Las pantallas de esta página son representaciones con datos de ejemplo. Power BI es marca
-          registrada de Microsoft.</p>
+        <p class="disc">Out of confidentiality and information-protection policies, CAT Consultores does not
+          disclose the names of specific clients or companies that have retained our services. The screens on
+          this page are representations with sample data. Power BI is a registered trademark of Microsoft.</p>
       </div>
       <div class="fcol">
-        <h4>Navegación</h4>
+        <h4>Navigation</h4>
         <a href="#que-es">Qué es RaaS</a>
         <a href="#linea">SaaS vs RaaS</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#vivo">En vivo</a>
-        <a href="#maquinaria">La maquinaria</a>
-        <a href="#no-es">Los límites</a>
+        <a href="#resultados">Results</a>
+        <a href="#vivo">Live</a>
+        <a href="#maquinaria">The machinery</a>
+        <a href="#no-es">The limits</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="fcol">
-        <h4>Conectar</h4>
-        <a href="#contacto">Formulario</a>
-        <span>linkedin.com/in/catconsultores</span>
-        <span>catconsultores.com.ar</span>
+        <h4>Connect</h4>
+        <a href="#contacto">Contact form</a>
+        <a href="https://www.linkedin.com/in/catconsultores" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="../video/">Video</a>
+        <a href="../" hreflang="es-AR" lang="es">Versión en castellano</a>
       </div>
     </div>
     <div class="fbot mono">
       <span>© 2015–2026 CAT Consultores</span>
-      <span>Resultados como Servicio</span>
+      <span>Caballito · City of Buenos Aires · Argentina</span>
     </div>
   </div>
 </footer>
@@ -1051,8 +1215,8 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   var EASE = function(t){ return 1 - Math.pow(1 - t, 3); };
 
   /* ---------- utilidades ---------- */
-  var nf0 = new Intl.NumberFormat("es-AR", {maximumFractionDigits:0});
-  var nf1 = new Intl.NumberFormat("es-AR", {minimumFractionDigits:1, maximumFractionDigits:1});
+  var nf0 = new Intl.NumberFormat("en-US", {maximumFractionDigits:0});
+  var nf1 = new Intl.NumberFormat("en-US", {minimumFractionDigits:1, maximumFractionDigits:1});
 
   function tween(from, to, ms, cb){
     if (REDUCE){ cb(to); return; }
@@ -1091,7 +1255,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   burger.addEventListener("click", function(){
     var open = nav.classList.toggle("open");
     burger.setAttribute("aria-expanded", String(open));
-    burger.textContent = open ? "Cerrar" : "Menú";
+    burger.textContent = open ? "Close" : "Menu";
   });
   nav.addEventListener("click", function(e){
     if (e.target.closest("a") && nav.classList.contains("open")){
@@ -1174,11 +1338,11 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   /* ---------- 03 · línea de responsabilidad ---------- */
   var MODES = {
     saas: { from:1, to:1, tag:"SaaS",
-      txt:"Te alquilan un programa que ya existe. Conseguir el dato, configurarlo para tu negocio, operarlo todos los días y sostenerlo cuando el negocio cambia sigue siendo trabajo tuyo, y ahí está la mayor parte del esfuerzo real." },
-    cons: { from:1, to:2, tag:"Consultoría clásica",
-      txt:"Alguien viene, lo arma, lo entrega y se va. El día de la entrega termina el proyecto; tu negocio, no. Seis meses después la herramienta describe una empresa que ya cambió." },
+      txt:"They rent you a program that already exists. Getting the data, configuring it for your business, running it every day and sustaining it when the business changes is still your work, and that is where most of the real effort sits." },
+    cons: { from:1, to:2, tag:"Classic consulting",
+      txt:"Someone comes in, builds it, hands it over and leaves. On delivery day the project ends; your business does not. Six months later the tool describes a company that has already changed." },
     raas: { from:0, to:5, tag:"RaaS",
-      txt:"Nos hacemos cargo de la cadena entera y de que siga funcionando el mes que viene. Lo que te llega es el número listo para usar, no la tarea de producirlo." }
+      txt:"We take on the whole chain and on keeping it working next month. What reaches you is the number ready to use, not the task of producing it." }
   };
   var nodes = [].slice.call(document.querySelectorAll(".chaintrack .node"));
   var owners = [].slice.call(document.querySelectorAll("#owner span"));
@@ -1197,13 +1361,13 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
       /* la banda barre en orden: cada celda arranca 35 ms después de la anterior */
       o.style.setProperty("--d", (i * 35) + "ms");
       o.classList.toggle("prov", prov);
-      o.querySelector("b").textContent = prov ? "Proveedor" : "Tuyo";
+      o.querySelector("b").textContent = prov ? "Provider" : "Yours";
     });
     tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.mode === key)); });
     capTag.textContent = m.tag;
     capTxt.textContent = m.txt;
     var left = 6 - (m.to - m.from + 1);
-    tallyT.textContent = left === 1 ? "sigue siendo tuyo" : (left === 0 ? "quedan de tu lado" : "siguen siendo tuyos");
+    tallyT.textContent = left === 1 ? "is still yours" : (left === 0 ? "are left on your side" : "are still yours");
     tween(curTally, left, 420, function(v){ tallyN.textContent = Math.round(v); });
     curTally = left;
   }
@@ -1233,11 +1397,11 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   /* ---------- 06 · tablero en vivo ---------- */
   var PERIODS = ["7D","30D","90D","YTD"];
   var REGIONS = ["AR","BR","CL","MX","UY"];
-  var SEGMENTS = ["Retail","Mayorista","E-commerce","B2B"];
+  var SEGMENTS = ["Retail","Wholesale","E-commerce","B2B"];
   var TABS = [
-    {t:"Tendencia · ingresos", m:1.00},
-    {t:"Tendencia · operaciones", m:0.78},
-    {t:"Tendencia · campañas", m:1.34}
+    {t:"Trend · revenue", m:1.00},
+    {t:"Trend · deals", m:0.78},
+    {t:"Trend · campaigns", m:1.34}
   ];
   var st = { tab:0, period:1, regions:[true,true,false,true,false], segments:[true,false,true,false] };
   var prev = null;
@@ -1345,24 +1509,24 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     m.bars.forEach(function(b){ if (b.on && (!worst || b.value < worst.value)) worst = b; });
     var best = null;
     m.bars.forEach(function(b){ if (b.on && (!best || b.value > best.value)) best = b; });
-    out.push({ t:"Alerta", b: worst
-      ? "El segmento " + worst.label + " aporta " + nf1.format(worst.value / Math.max(1, m.rev) * 100) + "% de los ingresos del corte. Es el que menos suma."
-      : "No hay segmentos activos: elegí al menos uno para leer el resultado." });
-    out.push({ t:"Oportunidad", b: best
-      ? best.label + " concentra " + nf1.format(best.value / Math.max(1, m.rev) * 100) + "% del total con " + nf0.format(Math.round(m.deals / Math.max(1, m.ns))) + " operaciones."
-      : "Sin datos suficientes en el corte actual." });
-    out.push({ t:"Patrón", b: "Con " + m.nr + (m.nr === 1 ? " región activa" : " regiones activas") + ", el ticket promedio queda en $" + nf0.format(m.avg) + " y la conversión en " + nf1.format(m.conv) + "%." });
+    out.push({ t:"Alert", b: worst
+      ? "Segment " + worst.label + " contributes " + nf1.format(worst.value / Math.max(1, m.rev) * 100) + "% of revenue in this cut. It is the one adding least."
+      : "No active segments: pick at least one to read the result." });
+    out.push({ t:"Opportunity", b: best
+      ? best.label + " concentrates " + nf1.format(best.value / Math.max(1, m.rev) * 100) + "% of the total with " + nf0.format(Math.round(m.deals / Math.max(1, m.ns))) + " deals."
+      : "Not enough data in the current cut." });
+    out.push({ t:"Pattern", b: "With " + m.nr + (m.nr === 1 ? " active region" : " active regions") + ", the average ticket sits at $" + nf0.format(m.avg) + " and conversion at " + nf1.format(m.conv) + "%." });
     return out;
   }
 
   var stateEl = document.getElementById("bstate");
   var busyT = null;
   function markBusy(){
-    stateEl.textContent = "Recalculando";
+    stateEl.textContent = "Recalculating";
     stateEl.classList.add("busy");
     clearTimeout(busyT);
     busyT = setTimeout(function(){
-      stateEl.textContent = "Actualizado";
+      stateEl.textContent = "Up to date";
       stateEl.classList.remove("busy");
     }, 620);
   }
@@ -1382,14 +1546,14 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
         var k = pair[0], now = m[k], was = prev[k];
         var d = was ? (now - was) / was * 100 : 0;
         var el = deltaEls[k];
-        el.textContent = (d >= 0 ? "↗ " : "↘ ") + nf1.format(Math.abs(d)) + "% vs. corte anterior";
+        el.textContent = (d >= 0 ? "↗ " : "↘ ") + nf1.format(Math.abs(d)) + "% vs. previous cut";
         el.classList.toggle("down", d < 0);
       });
     } else {
-      deltaEls.rev.textContent = "↗ 12,4% vs. período previo";
-      deltaEls.deals.textContent = "↗ 8,1% vs. período previo";
-      deltaEls.avg.textContent = "↗ 3,9% vs. período previo";
-      deltaEls.conv.textContent = "↗ 2,2 pts vs. período previo";
+      deltaEls.rev.textContent = "↗ 12.4% vs. previous period";
+      deltaEls.deals.textContent = "↗ 8.1% vs. previous period";
+      deltaEls.avg.textContent = "↗ 3.9% vs. previous period";
+      deltaEls.conv.textContent = "↗ 2.2 pts vs. previous period";
     }
 
     document.getElementById("chtitle").textContent = TABS[st.tab].t;
@@ -1481,7 +1645,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   /* ---------- 07 · la maquinaria ---------- */
   var SOURCES = ["Excel","SQL Server","MySQL","PostgreSQL","Google Analytics","Meta Ads",
                  "Google Sheets","SharePoint","CSV / TXT","APIs REST","Web scraping","Dataverse"];
-  var OUTS = [["Ver","Saber dónde estás"],["Ahorrar","Dejar de hacerlo a mano"],["Ganar","Cobrar mejor"]];
+  var OUTS = [["See","Know where you stand"],["Save","Stop doing it by hand"],["Earn","Charge better"]];
 
   (function pipeline(){
     var host = document.getElementById("pipe");
@@ -1538,7 +1702,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     var hl = document.createElementNS(svgNS, "text");
     hl.setAttribute("class", "hublab"); hl.setAttribute("x", HUB - 6);
     hl.setAttribute("y", H2/2 - 38); hl.setAttribute("text-anchor", "middle");
-    hl.textContent = "Una sola verdad";
+    hl.textContent = "A single truth";
     svg.appendChild(hl);
 
     OUTS.forEach(function(o, i){
@@ -1582,7 +1746,7 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
   document.getElementById("frm").addEventListener("submit", function(e){
     e.preventDefault();
     var n = document.getElementById("frmnote");
-    n.textContent = "Por ahora el contacto va por LinkedIn: linkedin.com/in/catconsultores";
+    n.textContent = "For now contact goes through LinkedIn: linkedin.com/in/catconsultores";
     n.style.color = "var(--accent)";
   });
 
