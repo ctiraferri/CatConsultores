@@ -1269,13 +1269,18 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
       es nuestra.</p>
 
     <div class="contact" style="margin-top:clamp(36px,5vh,60px)">
-      <form class="rv" id="frm" novalidate>
-        <label class="field"><span>Nombre</span><input type="text" name="nombre" placeholder="Cómo te llamás" /></label>
-        <label class="field"><span>Email</span><input type="email" name="email" placeholder="Dónde te escribimos" /></label>
+      <form class="rv" id="frm" method="POST" action="https://formsubmit.co/ctiraferri@catconsultores.com.ar">
+        <input type="hidden" name="_subject" value="Consulta desde catconsultores.com.ar" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://catconsultores.com.ar/?enviado=1#contacto" />
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+        <label class="field"><span>Nombre</span><input type="text" name="nombre" required placeholder="Cómo te llamás" /></label>
+        <label class="field"><span>Email</span><input type="email" name="email" required placeholder="Dónde te escribimos" /></label>
         <label class="field"><span>Empresa</span><input type="text" name="empresa" placeholder="Dónde trabajás" /></label>
-        <label class="field"><span>Qué resultado buscás</span><textarea name="mensaje" rows="4" placeholder="«Quiero saber todos los lunes qué producto me deja margen», «quiero dejar de cargar la venta a mano»…"></textarea></label>
-        <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit">Enviar mensaje</button></div>
-        <div class="formnote" id="frmnote">También podés escribirnos por LinkedIn</div>
+        <label class="field"><span>Qué resultado buscás</span><textarea name="mensaje" rows="4" required placeholder="«Quiero saber todos los lunes qué producto me deja margen», «quiero dejar de cargar la venta a mano»…"></textarea></label>
+        <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit" id="frmbtn">Enviar mensaje</button></div>
+        <div class="formnote" id="frmnote" role="status" aria-live="polite">Te respondemos dentro del día hábil</div>
       </form>
 
       <div class="rv">
@@ -1867,13 +1872,55 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
     }, {threshold:.15}).observe(host);
   })();
 
-  /* ---------- formulario inerte ---------- */
-  document.getElementById("frm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var n = document.getElementById("frmnote");
-    n.textContent = "Por ahora el contacto va por LinkedIn: linkedin.com/in/catconsultores";
-    n.style.color = "var(--accent)";
-  });
+  /* ---------- formulario ---------- */
+  (function(){
+    var frm = document.getElementById("frm"),
+        btn = document.getElementById("frmbtn"),
+        note = document.getElementById("frmnote");
+    var IDLE = note.textContent;
+
+    function say(txt, color){
+      note.textContent = txt;
+      note.style.color = color || "";
+    }
+
+    /* vuelta del envio sin JavaScript, que pasa por _next */
+    if (/[?&]enviado=1/.test(location.search)){
+      say("Listo, lo recibimos. Te respondemos dentro del d\u00eda h\u00e1bil.", "var(--accent)");
+    }
+
+    frm.addEventListener("submit", function(e){
+      if (!window.fetch) return;            /* sin fetch, que haga el POST normal */
+      e.preventDefault();
+      if (btn.disabled) return;
+      btn.disabled = true;
+      say("Enviando\u2026", "var(--accent)");
+
+      var d = {};
+      new FormData(frm).forEach(function(v, k){ d[k] = v; });
+
+      fetch("https://formsubmit.co/ajax/ctiraferri@catconsultores.com.ar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(d)
+      })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function(){
+        frm.reset();
+        say("Listo, lo recibimos. Te respondemos dentro del d\u00eda h\u00e1bil.", "var(--accent)");
+        btn.disabled = false;
+      })
+      .catch(function(){
+        say("No se pudo enviar. Escribinos a ctiraferri@catconsultores.com.ar o por LinkedIn.", "#C08A7E");
+        btn.disabled = false;
+      });
+    });
+
+    /* si el usuario vuelve a escribir, el mensaje anterior estorba */
+    frm.addEventListener("input", function(){
+      if (note.textContent !== IDLE && !btn.disabled) say(IDLE);
+    });
+  })();
 
 })();
 </script>
