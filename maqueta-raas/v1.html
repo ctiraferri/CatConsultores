@@ -1,0 +1,1710 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CAT Consultores · Resultados como Servicio (RaaS) — MAQUETA v1</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" href="../assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#12110F; --bg-2:#1A1915; --bg-3:#221F1A; --bg-4:#2A2620;
+  --fg:#EDE8DE;
+  --dim:rgba(237,232,222,.70);
+  --mid:rgba(237,232,222,.54);
+  --faint:rgba(237,232,222,.46);
+  --ghost:rgba(237,232,222,.20);
+  --rule:rgba(237,232,222,.10);
+  --rule-2:rgba(237,232,222,.20);
+  --accent:#A9B8C7;
+  --accent-deep:#5E8EA8;
+  --ink:#12110F;
+  --pad:clamp(20px,5vw,60px);
+  --maxw:1280px;
+  --sans:"Instrument Sans","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--fg); font-family:var(--sans);
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+::selection{background:var(--accent);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.kc{text-transform:none;letter-spacing:.1em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.03}
+em{font-style:italic;color:var(--accent)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- topbar ---------- */
+#sentinel{position:absolute;top:0;left:0;width:1px;height:1px}
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;gap:18px;padding:13px var(--pad);
+  background:rgba(18,17,15,.90);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s var(--ease-out);
+}
+.topbar.stuck{border-bottom-color:var(--rule)}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.brand img{width:30px;height:auto;display:block;opacity:.95}
+.brand .bn{font-family:var(--serif);font-size:19px;line-height:1;white-space:nowrap}
+.brand .bn span{color:var(--accent)}
+.vswitch{display:flex;align-items:center;gap:0;border:1px solid var(--rule-2);border-radius:99px;overflow:hidden;flex:0 0 auto}
+.vswitch a{
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 11px;color:var(--faint);transition:background .2s var(--ease-out),color .2s var(--ease-out);
+}
+.vswitch a[aria-current]{background:var(--accent);color:var(--ink)}
+.navlinks{display:flex;gap:20px;margin-left:auto;align-items:center}
+.navlinks a{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);transition:color .2s var(--ease-out)}
+.navcta{
+  background:var(--fg);color:var(--ink)!important;padding:9px 15px;border-radius:2px;
+  transition:background .2s var(--ease-out),transform .2s var(--ease-out);
+}
+.burger{display:none;background:none;border:0;color:var(--fg);font-family:var(--mono);font-size:10px;letter-spacing:.14em;cursor:pointer;padding:8px 0}
+
+@media (hover:hover) and (pointer:fine){
+  .navlinks a:hover{color:var(--fg)}
+  .navcta:hover{background:var(--accent);transform:translateY(-1px)}
+  .vswitch a:hover{color:var(--fg)}
+}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(122px,17vh,190px) 0 clamp(60px,8vh,90px);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-18% -16% auto auto;width:82vw;height:82vw;max-width:1060px;max-height:1060px;
+  background:radial-gradient(circle closest-side,rgba(94,142,168,.15),rgba(94,142,168,.05) 55%,transparent 78%);pointer-events:none;
+}
+.hero .wrap{position:relative}
+.hero .eyebrow{color:var(--accent);margin-bottom:clamp(26px,5vh,46px)}
+.hero h1{font-size:clamp(42px,8.2vw,112px);max-width:15ch}
+.hero h1 .off{color:var(--faint)}
+/* el tachado se dibuja: representa el reencuadre, no es decoracion */
+.hero h1 .strike{position:relative;display:inline-block}
+.hero h1 .strike::after{
+  content:"";position:absolute;left:-.02em;right:-.02em;top:var(--strike-top,.6em);height:2px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .62s var(--ease-out) .5s;
+}
+.hero h1.drawn .strike::after{transform:scaleX(1)}
+.hero h1 .reveal{display:inline-block;opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease-out) 1s,transform .6s var(--ease-out) 1s}
+.hero h1.drawn .reveal{opacity:1;transform:none}
+.hero .sub{margin-top:clamp(26px,4vh,40px);max-width:60ch;font-size:clamp(15px,1.55vw,19px);line-height:1.6;color:var(--dim)}
+.hero .sub b{color:var(--fg);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:clamp(30px,4.5vh,44px)}
+.btn{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 26px;border-radius:2px;border:1px solid transparent;cursor:pointer;display:inline-block;
+  transition:transform .18s var(--ease-out),background .2s var(--ease-out),border-color .2s var(--ease-out);
+}
+.btn.solid{background:var(--fg);color:var(--ink)}
+.btn.ghost{border-color:var(--rule-2);color:var(--fg);background:none}
+.btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){
+  .btn.solid:hover{background:var(--accent);transform:translateY(-2px)}
+  .btn.ghost:hover{border-color:var(--fg);transform:translateY(-2px)}
+}
+
+.vs{margin-top:clamp(46px,7vh,76px);border-top:1px solid var(--rule);max-width:880px}
+.vsrow{display:grid;grid-template-columns:78px 1fr;gap:clamp(14px,3vw,30px);padding:19px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.vsrow .k{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;color:var(--faint)}
+.vsrow.on .k{color:var(--accent)}
+.vsrow .v{font-size:clamp(15px,1.75vw,20px);color:var(--dim);font-family:var(--serif);letter-spacing:-.01em;line-height:1.3}
+.vsrow.on .v{color:var(--fg)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:clamp(48px,7vh,80px);background:var(--rule)}
+.stat{background:var(--bg);padding:22px 20px 20px}
+.stat .n{font-family:var(--serif);font-size:clamp(30px,4.2vw,50px);line-height:1;display:block}
+.stat .l{margin-top:10px;color:var(--faint);display:block;font-size:10px}
+
+/* ---------- secciones ---------- */
+.sec{padding:clamp(84px,12vh,150px) 0;border-top:1px solid var(--rule)}
+.sec.alt{background:var(--bg-2)}
+.sechead{
+  display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:baseline;
+  padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:clamp(40px,6vh,72px);
+}
+.sechead .ix{color:var(--accent)}
+.sechead .m{color:var(--faint)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.7vw,60px);line-height:1.05;letter-spacing:-.015em;max-width:19ch}
+h3{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.3vw,28px);line-height:1.15;letter-spacing:-.01em}
+.lede{font-size:clamp(15px,1.5vw,18.5px);line-height:1.6;color:var(--dim);max-width:64ch;margin-top:26px}
+.lede b{color:var(--fg);font-weight:500}
+
+/* ---------- 01 · antes / despues ---------- */
+.swap{margin-top:clamp(44px,6vh,76px);border-top:1px solid var(--rule)}
+.swaprow{
+  display:grid;grid-template-columns:1fr 46px 1.15fr;gap:clamp(12px,2.4vw,30px);align-items:center;
+  padding:clamp(20px,3.2vh,30px) 0;border-bottom:1px solid var(--rule);
+}
+.swaprow .old{
+  color:var(--mid);font-size:clamp(14px,1.5vw,17px);
+  text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:transparent;
+  transition:text-decoration-color .45s var(--ease-out) .12s;
+}
+.swaprow.in .old{text-decoration-color:rgba(237,232,222,.45)}
+.swaprow .ar{font-family:var(--mono);color:var(--accent);font-size:14px;text-align:center;opacity:0;transform:translateX(-8px);transition:opacity .4s var(--ease-out) .3s,transform .4s var(--ease-out) .3s}
+.swaprow.in .ar{opacity:1;transform:none}
+.swaprow .new{font-family:var(--serif);font-size:clamp(17px,2.05vw,26px);line-height:1.2;letter-spacing:-.01em;opacity:0;transform:translateY(10px);transition:opacity .55s var(--ease-out) .42s,transform .55s var(--ease-out) .42s}
+.swaprow.in .new{opacity:1;transform:none}
+
+/* ---------- 02 · escalera as-a-service ---------- */
+.defgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,6vw,84px);align-items:start}
+.defbox{border-left:2px solid var(--accent);padding:4px 0 4px clamp(20px,3vw,34px)}
+.defbox .term{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.defbox .body{font-family:var(--serif);font-size:clamp(21px,2.75vw,34px);line-height:1.22;letter-spacing:-.012em}
+.defnote{margin-top:24px;font-size:13.5px;line-height:1.6;color:var(--mid);max-width:52ch}
+
+.ladder{border-top:1px solid var(--rule)}
+.rung{
+  display:block;width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  border-bottom:1px solid var(--rule);padding:16px 0 14px;color:inherit;font:inherit;
+}
+.rung .top{display:grid;grid-template-columns:66px 1fr;gap:16px;align-items:baseline}
+.rung .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--faint);transition:color .2s var(--ease-out)}
+.rung .v{font-size:14.5px;color:var(--mid);line-height:1.45;transition:color .2s var(--ease-out)}
+.rung[aria-pressed="true"] .k{color:var(--accent)}
+.rung[aria-pressed="true"] .v{color:var(--fg)}
+.rung .meter{display:block;margin:12px 0 0 82px;height:3px;background:var(--rule);position:relative;overflow:hidden}
+.rung .meter i{
+  position:absolute;inset:0;background:var(--accent);transform:scaleX(var(--f,0));transform-origin:left;
+  transition:transform .42s var(--ease-out);
+}
+.rung .cap{
+  display:block;margin:9px 0 0 82px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);transition:color .2s var(--ease-out);
+}
+.rung[aria-pressed="true"] .cap{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){ .rung:hover .v{color:var(--fg)} }
+
+.analogy{margin-top:clamp(48px,7vh,86px);background:var(--bg-3);padding:clamp(28px,5vw,56px);border-left:2px solid var(--accent)}
+.analogy p{font-family:var(--serif);font-size:clamp(21px,3vw,40px);line-height:1.2;letter-spacing:-.015em;max-width:26ch}
+.analogy .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:22px}
+
+/* ---------- 03 · linea de responsabilidad ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(30px,5vh,50px) 0 clamp(22px,3.4vh,34px)}
+.tab{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:11px 18px;border:1px solid var(--rule-2);background:none;color:var(--dim);cursor:pointer;border-radius:2px;
+  transition:background .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out);
+}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+@media (hover:hover) and (pointer:fine){ .tab:hover{color:var(--fg);border-color:var(--ghost)} }
+.chaintrack{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--rule)}
+.node{background:var(--bg-2);padding:20px 16px 22px;min-height:154px;transition:background .4s var(--ease-out)}
+.node .nn{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--faint);transition:color .4s var(--ease-out)}
+.node .nt{font-family:var(--serif);font-size:clamp(15px,1.5vw,19px);line-height:1.15;margin:10px 0 9px;color:var(--mid);transition:color .4s var(--ease-out)}
+.node .nb{font-size:12.5px;line-height:1.42;color:var(--mid);transition:color .4s var(--ease-out)}
+.node.covered{background:var(--bg-3)}
+.node.covered .nn{color:var(--accent)}
+.node.covered .nt{color:var(--fg)}
+.owner{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-top:1px;background:var(--rule)}
+.owner span{
+  position:relative;background:var(--bg-2);padding:9px 16px;overflow:hidden;
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+}
+/* la banda barre de izquierda a derecha: la responsabilidad avanza sobre la cadena */
+.owner span::before{
+  content:"";position:absolute;inset:0;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease-out) var(--d,0ms);
+}
+.owner span b{position:relative;z-index:1;font-weight:400;transition:color .3s var(--ease-out) var(--d,0ms)}
+.owner span.prov::before{transform:scaleX(1)}
+.owner span.prov b{color:var(--ink)}
+
+.chaincap{margin-top:clamp(24px,3.5vh,34px);display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,32px);align-items:start;border-top:1px solid var(--rule);padding-top:22px}
+.chaincap .tagn{font-family:var(--mono);font-size:11px;letter-spacing:.11em;color:var(--accent);white-space:nowrap}
+.chaincap p{font-size:clamp(14.5px,1.6vw,18px);line-height:1.55;color:var(--dim);max-width:72ch;min-height:3.2em}
+.tally{
+  margin-top:clamp(22px,3vh,32px);display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;
+  border-left:2px solid var(--accent);padding-left:clamp(16px,2.4vw,26px);
+}
+.tally .big{font-family:var(--serif);font-size:clamp(30px,4vw,52px);line-height:1}
+.tally .txt{font-size:clamp(14px,1.5vw,17px);color:var(--dim)}
+.decision{margin-top:clamp(28px,4vh,44px);border:1px dashed var(--rule-2);padding:clamp(18px,3vw,26px);display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;justify-content:space-between}
+.decision .d1{font-family:var(--serif);font-size:clamp(17px,2vw,23px)}
+.decision .d2{font-size:13.5px;color:var(--mid);max-width:58ch;line-height:1.5}
+
+/* ---------- 04 · comparativa ---------- */
+.cmp{width:100%;border-collapse:collapse;margin-top:clamp(12px,2vh,22px)}
+.cmp th,.cmp td{text-align:left;vertical-align:top;padding:17px 18px;border-bottom:1px solid var(--rule)}
+.cmp thead th{border-bottom:1px solid var(--rule-2);padding-bottom:14px}
+.cmp .rowk{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);width:18%;white-space:nowrap;font-weight:400}
+.cmp th.h{font-family:var(--serif);font-weight:400;font-size:clamp(17px,2vw,24px);letter-spacing:-.01em;color:var(--mid)}
+.cmp th.h small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:7px}
+.cmp td{font-size:14.5px;line-height:1.45;color:var(--mid)}
+.cmp .raas{background:var(--bg-3)}
+.cmp th.h.raas{color:var(--fg)}
+.cmp th.h.raas small{color:var(--accent)}
+.cmp td.raas{color:var(--fg)}
+
+/* ---------- 05 · resultados ---------- */
+.rescards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:clamp(20px,3vh,30px)}
+.rescard{background:var(--bg);padding:clamp(26px,3.4vw,40px);display:flex;flex-direction:column;transition:background .3s var(--ease-out)}
+.rescard .rn{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent)}
+.rescard h3{margin:16px 0 14px}
+.rescard p{color:var(--dim);font-size:14.5px;line-height:1.55}
+.rescard ul{list-style:none;margin:20px 0 26px;display:flex;flex-direction:column;gap:9px}
+.rescard li{font-size:13.5px;color:var(--dim);padding-left:16px;position:relative;line-height:1.4}
+.rescard li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--accent)}
+.rescard .how{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);line-height:1.8}
+@media (hover:hover) and (pointer:fine){ .rescard:hover{background:var(--bg-2)} }
+
+/* ---------- 06 · tablero en vivo ---------- */
+.board{margin-top:clamp(28px,4vh,44px);border:1px solid var(--rule-2);background:var(--bg-2)}
+.boardbar{display:flex;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--rule)}
+.boardbar .bt{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 22px;background:none;border:0;border-right:1px solid var(--rule);color:var(--faint);cursor:pointer;
+  transition:color .2s var(--ease-out),background .2s var(--ease-out);
+}
+.boardbar .bt[aria-selected="true"]{color:var(--fg);background:var(--bg-3)}
+.boardbar .state{
+  margin-left:auto;padding:0 20px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);transition:color .2s var(--ease-out)
+}
+.boardbar .state.busy{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){ .boardbar .bt:hover{color:var(--dim)} }
+
+.boardbody{display:grid;grid-template-columns:210px 1fr}
+.filters{border-right:1px solid var(--rule);padding:22px 20px 26px}
+.flab{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+.fgroup{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.chipf{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:6px 10px;border:1px solid var(--rule-2);
+  background:none;color:var(--mid);cursor:pointer;border-radius:2px;
+  transition:background .18s var(--ease-out),color .18s var(--ease-out),border-color .18s var(--ease-out),transform .18s var(--ease-out);
+}
+.chipf[aria-pressed="true"]{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.chipf:active{transform:scale(.96)}
+@media (hover:hover) and (pointer:fine){ .chipf:hover{border-color:var(--ghost);color:var(--fg)} .chipf[aria-pressed="true"]:hover{color:var(--ink)} }
+.meta{border-top:1px solid var(--rule);padding-top:14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--faint);line-height:2}
+.meta div{display:flex;justify-content:space-between;gap:10px}
+.meta b{font-weight:400;color:var(--dim)}
+
+.canvas{padding:24px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-bottom:24px}
+.kpi{background:var(--bg-2);padding:16px 18px 18px}
+.kpi .kl{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+.kpi .kv{font-family:var(--serif);font-size:clamp(24px,2.7vw,36px);line-height:1.05;margin-top:10px}
+.kpi .kd{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--accent);margin-top:8px}
+.kpi .kd.down{color:#C08A7E}
+
+.chartwrap{position:relative;border-top:1px solid var(--rule);padding-top:16px}
+.charthead{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+.chartbox{position:relative;height:190px;touch-action:pan-y}
+.chartbox svg{display:block;width:100%;height:100%;overflow:visible}
+.gridline{stroke:var(--rule);stroke-width:1;vector-effect:non-scaling-stroke}
+.serie{fill:none;stroke:var(--accent);stroke-width:1.75;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.area{fill:url(#ag);opacity:0;transition:opacity .5s var(--ease-out)}
+.area.on{opacity:1}
+.guide{position:absolute;top:0;bottom:0;width:1px;background:var(--ghost);left:0;opacity:0;pointer-events:none;transition:opacity .15s var(--ease-out)}
+.guide.on{opacity:1}
+.readout{
+  position:absolute;top:-4px;left:0;transform:translate(-50%,-100%);pointer-events:none;opacity:0;
+  background:var(--bg-4);border:1px solid var(--rule-2);padding:7px 10px;white-space:nowrap;
+  font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--fg);
+  transition:opacity .15s var(--ease-out);
+}
+.readout.on{opacity:1}
+.dotm{fill:var(--accent);opacity:0;transition:opacity .15s var(--ease-out)}
+.dotm.on{opacity:1}
+
+.bars{margin-top:26px;border-top:1px solid var(--rule);padding-top:16px}
+.barrow{display:grid;grid-template-columns:110px 1fr 104px;gap:14px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--mid);margin-bottom:11px;transition:color .2s var(--ease-out)}
+.barrow.on{color:var(--fg)}
+.bartrack{height:12px;background:rgba(237,232,222,.07);position:relative;overflow:hidden}
+.barrow:not(.on) .bartrack{background:none;box-shadow:inset 0 -1px 0 var(--rule)}
+.bartrack i{position:absolute;inset:0;background:var(--accent);transform:scaleX(var(--f,0));transform-origin:left;transition:transform .45s var(--ease-out)}
+.barrow:not(.on) .bartrack i{background:var(--ghost)}
+.barval{text-align:right}
+
+.insights{margin-top:26px;border-top:1px solid var(--rule);padding-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule)}
+.ins{background:var(--bg-2);padding:15px 16px 17px}
+.ins .it{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.ins .ib{font-size:13px;line-height:1.45;color:var(--dim);margin-top:9px}
+.boardnote{margin-top:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+/* ---------- 07 · la maquinaria ---------- */
+.machine{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(34px,6vw,80px);align-items:start}
+.stackrow{border-top:1px solid var(--rule);padding:16px 0;display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:baseline}
+.stackrow .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.stackrow .v{font-size:14px;color:var(--dim);line-height:1.5}
+
+.pipe{margin-top:clamp(34px,5vh,60px);width:100%}
+.pipe svg{display:block;width:100%;height:auto}
+.pl{fill:none;stroke:var(--rule-2);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .25s var(--ease-out),opacity .25s var(--ease-out)}
+.pipe[data-hi] .pl{opacity:.16}
+.pipe[data-hi] .pl.hi{opacity:1;stroke:var(--accent)}
+.slab{font-family:var(--mono);font-size:11px;fill:var(--mid);transition:fill .2s var(--ease-out)}
+.shit{cursor:pointer}
+.shit:hover .slab,.shit:focus-visible .slab{fill:var(--fg)}
+.trunk{stroke:var(--accent);stroke-width:1.4;opacity:.7}
+.hubring{fill:none;stroke:var(--accent);stroke-width:1}
+.hublab{font-family:var(--serif);font-size:17px;fill:var(--fg)}
+.outlab{font-family:var(--serif);font-size:16px;fill:var(--fg)}
+.outsub{font-family:var(--mono);font-size:9.5px;fill:var(--faint);letter-spacing:.12em}
+.dot{fill:var(--accent);animation:flow 3.4s linear infinite;offset-rotate:0deg}
+.pipe:not(.run) .dot{animation-play-state:paused}
+@keyframes flow{ from{offset-distance:0%;opacity:0} 12%{opacity:1} 88%{opacity:1} to{offset-distance:100%;opacity:0} }
+
+/* ---------- 08 · proceso ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);margin-top:clamp(20px,3vh,30px)}
+.step{background:var(--bg-2);padding:26px 20px 30px}
+.step .w{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;color:var(--accent)}
+.step .n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--ghost);margin:12px 0 10px}
+.step h3{font-size:clamp(17px,1.8vw,21px);margin-bottom:9px}
+.step p{font-size:13px;line-height:1.45;color:var(--mid)}
+.step.loop{background:var(--bg-3)}
+.step.loop .n{color:var(--accent)}
+.step .spin{display:inline-block;animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- 09 · limites ---------- */
+.nots{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);margin-top:clamp(20px,3vh,30px)}
+.nots .not:first-child{grid-column:1 / -1}
+.not{background:var(--bg);padding:clamp(24px,3.2vw,38px)}
+.not .x{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint)}
+.not h3{margin:14px 0 12px}
+.not p{font-size:14px;line-height:1.55;color:var(--dim)}
+
+/* ---------- 10 · contacto ---------- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,80px);align-items:start}
+.field{border-bottom:1px solid var(--rule);padding:14px 0;display:block;transition:border-color .2s var(--ease-out)}
+.field > span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:8px}
+.field input,.field textarea{width:100%;background:none;border:0;color:var(--fg);font-family:var(--sans);font-size:16px;outline:none;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--ghost)}
+.field:focus-within{border-bottom-color:var(--accent)}
+.formnote{margin-top:18px;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+.inforow{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.inforow:first-child{border-top:1px solid var(--rule)}
+.inforow .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+.inforow .v{font-size:15px;color:var(--dim)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;background:var(--bg-2)}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start}
+.fgrid p.disc{font-size:12.5px;line-height:1.6;color:var(--mid);max-width:62ch;margin-top:20px}
+.fcol h4{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:16px}
+.fcol a,.fcol span{display:block;font-size:13.5px;color:var(--dim);margin-bottom:9px}
+.fbot{margin-top:clamp(40px,6vh,64px);padding-top:22px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;color:var(--faint)}
+
+/* ---------- notas ---------- */
+#notesbtn{
+  position:fixed;right:18px;bottom:18px;z-index:80;cursor:pointer;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--accent);color:var(--ink);border:0;padding:12px 16px;border-radius:2px;
+  box-shadow:0 10px 40px rgba(0,0,0,.45);transition:transform .2s var(--ease-out);
+}
+#notesbtn:active{transform:translateY(1px)}
+#notes{
+  position:fixed;right:18px;bottom:64px;z-index:80;width:min(410px,calc(100vw - 36px));
+  max-height:min(72vh,660px);overflow:auto;background:var(--bg-3);border:1px solid var(--rule-2);
+  padding:24px 24px 28px;box-shadow:0 20px 70px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(8px) scale(.98);pointer-events:none;
+  transition:opacity .22s var(--ease-out),transform .22s var(--ease-out);
+}
+#notes.open{opacity:1;transform:none;pointer-events:auto}
+#notes h4{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:400;margin:0 0 6px}
+#notes h5{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);font-weight:400;margin:22px 0 9px}
+#notes p,#notes li{font-size:13px;line-height:1.55;color:var(--dim)}
+#notes ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+#notes li{padding-left:15px;position:relative}
+#notes li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--accent)}
+#notes li b{color:var(--fg);font-weight:500}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .navlinks{gap:15px}
+  .navlinks a{font-size:9.5px;letter-spacing:.1em}
+}
+@media (max-width:1080px){
+  .defgrid,.machine,.contact{grid-template-columns:1fr}
+  .rescards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .chaintrack,.owner{grid-template-columns:repeat(3,1fr)}
+  .node{min-height:0}
+  .boardbody{grid-template-columns:1fr}
+  .filters{border-right:0;border-bottom:1px solid var(--rule)}
+  .fgroup{margin-bottom:16px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .insights{grid-template-columns:1fr}
+}
+@media (max-width:880px){
+  .navlinks{display:none}
+  .burger{display:block;margin-left:auto}
+  .navlinks.open{
+    display:flex;flex-direction:column;gap:20px;position:fixed;inset:57px 0 auto 0;
+    background:var(--bg);padding:26px var(--pad) 32px;border-bottom:1px solid var(--rule);margin:0;align-items:flex-start;
+  }
+  .navlinks.open a{font-size:11px;letter-spacing:.14em}
+  .stats{grid-template-columns:1fr 1fr}
+  .swaprow{grid-template-columns:1fr;gap:7px}
+  .swaprow .ar{text-align:left}
+  .nots{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .chaincap{grid-template-columns:1fr;gap:12px}
+  .chaincap p{min-height:0}
+  .barrow{grid-template-columns:86px 1fr 84px;gap:10px;font-size:10px}
+  .cmp .rowk{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block;width:100%}
+  .cmp thead{display:none}
+  .cmp tr{border-bottom:1px solid var(--rule-2);padding:10px 0 18px}
+  .cmp td{border:0;padding:9px 0}
+  .cmp td::before{content:attr(data-m) " · " attr(data-k);display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:5px}
+}
+@media (max-width:620px){
+  .chaintrack,.owner{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+  .canvas{padding:18px 16px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  :root:not([data-motion="force"]) *{transition-duration:.01ms!important;animation:none!important}
+  :root:not([data-motion="force"]){scroll-behavior:auto}
+  :root:not([data-motion="force"]) .rv,
+  :root:not([data-motion="force"]) .swaprow .ar,
+  :root:not([data-motion="force"]) .swaprow .new,
+  :root:not([data-motion="force"]) .hero h1 .reveal{opacity:1;transform:none}
+  :root:not([data-motion="force"]) .hero h1 .strike::after{transform:scaleX(1)}
+  :root:not([data-motion="force"]) .dot{display:none}
+}
+
+/* control de movimiento del panel de notas */
+.mrow{border:1px solid var(--rule-2);padding:13px 14px;margin:14px 0 4px}
+.mrow .st{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block}
+.mrow .st b{color:var(--accent);font-weight:400}
+#mbtn{
+  margin-top:11px;width:100%;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  background:var(--fg);color:var(--ink);border:0;padding:10px 12px;border-radius:2px;cursor:pointer;
+}
+</style>
+</head>
+<body id="top">
+<div id="sentinel"></div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="#top">
+    <img src="../assets/logo.png" alt="CAT Consultores" />
+    <span class="bn">CAT <span>Consultores</span></span>
+  </a>
+  <span class="vswitch"><a href="index.html">v0</a><a href="v1.html" aria-current="page">v1</a></span>
+  <nav class="navlinks" id="nav">
+    <a href="#que-es">Qué es <span class="kc">RaaS</span></a>
+    <a href="#linea"><span class="kc">SaaS</span> vs <span class="kc">RaaS</span></a>
+    <a href="#resultados">Resultados</a>
+    <a href="#vivo">En vivo</a>
+    <a href="#maquinaria">La maquinaria</a>
+    <a class="navcta" href="#contacto">Hablemos</a>
+  </nav>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menú</button>
+</header>
+
+<main>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="mono eyebrow rv">Resultados como Servicio · <span class="kc">RaaS</span> · CAT Consultores desde 2015</div>
+
+    <h1 class="serif" id="h1">
+      <span class="off">No te vendemos</span><br/>
+      <span class="off strike">la herramienta.</span><br/>
+      <span class="reveal">Te entregamos<br/><em>el resultado</em>.</span>
+    </h1>
+
+    <p class="sub rv">Hace once años que construimos tableros, integraciones y sistemas a medida.
+      Y en once años nadie nos llamó porque quisiera un tablero: llamó porque necesitaba
+      <b>saber algo a tiempo</b>, <b>dejar de perder plata</b> o <b>dejar de hacer algo a mano</b>.
+      Eso es lo que entregamos. La herramienta es el medio, no el producto.</p>
+
+    <div class="actions rv">
+      <a class="btn solid" href="#que-es">Qué es RaaS ↓</a>
+      <a class="btn ghost" href="#vivo">Ver un resultado en vivo</a>
+    </div>
+
+    <div class="vs rv">
+      <div class="vsrow">
+        <span class="k">SaaS</span>
+        <span class="v">Te alquila el software. Convertirlo en resultado corre por tu cuenta.</span>
+      </div>
+      <div class="vsrow on">
+        <span class="k">RaaS</span>
+        <span class="v">El resultado es el entregable. El software es problema nuestro.</span>
+      </div>
+    </div>
+
+    <div class="stats rv" id="stats">
+      <div class="stat"><span class="n serif num" data-to="11">0</span><span class="l mono">Años operando</span></div>
+      <div class="stat"><span class="n serif num" data-to="50" data-suffix="+">0</span><span class="l mono">Soluciones en producción</span></div>
+      <div class="stat"><span class="n serif num" data-to="12">0</span><span class="l mono">Fuentes integrables</span></div>
+      <div class="stat"><span class="n serif">2–4</span><span class="l mono">Semanas al primer resultado</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 01 · EL CAMBIO DE FOCO ══════════ -->
+<section class="sec" id="cambio">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">01 / El cambio de foco</span>
+      <span class="mono">Qué compra en realidad un cliente</span>
+      <span class="mono m">Resultados como servicio</span>
+    </div>
+
+    <h2 class="rv">Un tablero no es un resultado. Es una pantalla donde <em>se ve</em> un resultado.</h2>
+    <p class="lede rv">El día que se entrega un tablero, el cliente todavía no ganó nada. Gana el lunes a la
+      mañana, cuando alguien mira un número que antes no existía y cambia una decisión. <b>Ese lunes es el
+      producto.</b> Todo lo demás —el modelo de datos, las medidas, la integración, el servidor, el
+      mantenimiento— es la fábrica: necesaria, invisible y nuestra.</p>
+
+    <div class="swap" id="swap">
+      <div class="swaprow">
+        <span class="old">«Te entrego un tablero de ventas.»</span>
+        <span class="ar">→</span>
+        <span class="new">Sabés cada lunes qué te está dejando plata y qué te la está sacando.</span>
+      </div>
+      <div class="swaprow">
+        <span class="old">«Te entrego una integración con el ERP.»</span>
+        <span class="ar">→</span>
+        <span class="new">Nadie vuelve a copiar y pegar la venta del día.</span>
+      </div>
+      <div class="swaprow">
+        <span class="old">«Te entrego un módulo de costos.»</span>
+        <span class="ar">→</span>
+        <span class="new">Ponés precio sabiendo el margen, no a ojo.</span>
+      </div>
+      <div class="swaprow">
+        <span class="old">«Te entrego un sitio con tienda online.»</span>
+        <span class="ar">→</span>
+        <span class="new">Te entran pedidos sin que suene el teléfono.</span>
+      </div>
+      <div class="swaprow">
+        <span class="old">«Te entrego el informe mensual.»</span>
+        <span class="ar">→</span>
+        <span class="new">El número está antes de que lo pidas, y avisa solo cuando se sale de rango.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 · QUÉ ES ══════════ -->
+<section class="sec alt" id="que-es">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">02 / Qué es</span>
+      <span class="mono">La definición, en castellano</span>
+      <span class="mono m"><span class="kc">RaaS</span> · Results as a Service</span>
+    </div>
+
+    <div class="defgrid">
+      <div class="rv">
+        <div class="defbox">
+          <span class="term">Resultados como Servicio · <span class="kc">RaaS</span></span>
+          <p class="body">Un modelo donde lo que se contrata no es una herramienta ni un proyecto con fecha
+            de cierre, sino <em>un resultado de negocio concreto</em>, sostenido en el tiempo. Elegir la
+            tecnología, armarla, operarla y mantenerla viva queda de nuestro lado.</p>
+        </div>
+        <p class="defnote">En inglés se lo llama <b>Results as a Service</b>. La sigla nació por analogía con
+          SaaS, PaaS e IaaS, la familia de modelos «as a service» del mundo del software, y corre el punto de
+          venta un escalón más arriba: del programa, al efecto del programa.</p>
+      </div>
+
+      <div class="rv">
+        <div class="ladder" id="ladder">
+          <button class="rung" data-f=".18" aria-pressed="false">
+            <span class="top"><span class="k">IaaS</span><span class="v">Te dan el servidor. Todo lo que corre arriba lo armás vos.</span></span>
+            <span class="meter"><i></i></span>
+            <span class="cap">Hace el proveedor: la infraestructura</span>
+          </button>
+          <button class="rung" data-f=".34" aria-pressed="false">
+            <span class="top"><span class="k">PaaS</span><span class="v">Te dan dónde correr tu sistema. El sistema sigue siendo tuyo.</span></span>
+            <span class="meter"><i></i></span>
+            <span class="cap">Hace el proveedor: infraestructura y plataforma</span>
+          </button>
+          <button class="rung" data-f=".55" aria-pressed="false">
+            <span class="top"><span class="k">SaaS</span><span class="v">Te dan el programa hecho. Aprenderlo, cargarlo y sacarle provecho es tu trabajo.</span></span>
+            <span class="meter"><i></i></span>
+            <span class="cap">Hace el proveedor: hasta el programa</span>
+          </button>
+          <button class="rung" data-f="1" aria-pressed="true">
+            <span class="top"><span class="k kc">RaaS</span><span class="v">Te dan lo que ibas a hacer con el programa.</span></span>
+            <span class="meter"><i></i></span>
+            <span class="cap">Hace el proveedor: hasta el resultado</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="analogy rv">
+      <p class="serif">SaaS te alquila el auto. La consultoría clásica te lo arma a medida y te da las
+        llaves. <em>RaaS te lleva a destino.</em></p>
+      <div class="cap">La diferencia no es la tecnología. Es dónde termina la responsabilidad.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 · LA LÍNEA DE RESPONSABILIDAD ══════════ -->
+<section class="sec" id="linea">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">03 / <span class="kc">SaaS</span> vs <span class="kc">RaaS</span></span>
+      <span class="mono">Dónde termina la responsabilidad</span>
+      <span class="mono m">Tocá cada modelo</span>
+    </div>
+
+    <h2 class="rv">La misma cadena. Cambia <em>dónde</em> te sueltan la mano.</h2>
+    <p class="lede rv">Entre el dato crudo y el número que te sirve hay seis tramos de trabajo. Lo único
+      que cambia de un modelo a otro es cuántos hace el proveedor y cuántos terminás haciendo vos.</p>
+
+    <div class="tabs rv" role="tablist" aria-label="Modelos">
+      <button class="tab" role="tab" data-mode="saas" aria-selected="false"><span class="kc">SaaS</span></button>
+      <button class="tab" role="tab" data-mode="cons" aria-selected="false">Consultoría clásica</button>
+      <button class="tab" role="tab" data-mode="raas" aria-selected="true"><span class="kc">RaaS</span></button>
+    </div>
+
+    <div class="chain rv" id="chain">
+      <div class="chaintrack">
+        <div class="node"><div class="nn">01</div><div class="nt">Conseguir el dato</div><div class="nb">Que exista, que esté limpio y que llegue todos los días.</div></div>
+        <div class="node"><div class="nn">02</div><div class="nt">La herramienta</div><div class="nb">El tablero, el sistema, la integración, la web.</div></div>
+        <div class="node"><div class="nn">03</div><div class="nt">Ponerla a punto</div><div class="nb">Para tu negocio, no para el negocio promedio.</div></div>
+        <div class="node"><div class="nn">04</div><div class="nt">Operarla</div><div class="nb">Que corra todos los días sin que nadie se acuerde de ella.</div></div>
+        <div class="node"><div class="nn">05</div><div class="nt">Que siga sirviendo</div><div class="nb">El negocio cambia; la herramienta tiene que cambiar con él.</div></div>
+        <div class="node"><div class="nn">06</div><div class="nt">El número en la mano</div><div class="nb">Alguien lo mira el lunes y sabe qué hacer.</div></div>
+      </div>
+      <div class="owner" id="owner">
+        <span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span><span><b>Tuyo</b></span>
+      </div>
+
+      <div class="chaincap">
+        <span class="tagn" id="capTag">RaaS</span>
+        <p id="capTxt">Nos hacemos cargo de la cadena entera y de que siga funcionando el mes que viene. Lo
+          que te llega es el número listo para usar, no la tarea de producirlo.</p>
+      </div>
+
+      <div class="tally">
+        <span class="big serif num" id="tallyN">0</span>
+        <span class="txt">de 6 tramos <span id="tallyT">siguen siendo tuyos</span>.</span>
+      </div>
+
+      <div class="decision">
+        <span class="d1 serif">La decisión, en los tres modelos, es siempre tuya.</span>
+        <span class="d2">Los datos no deciden: las personas deciden con datos. Nuestro trabajo es que lleguen
+          a esa decisión con algo en la mano, y que no dependan de nosotros para leerlo.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 · COMPARATIVA ══════════ -->
+<section class="sec alt" id="comparativa">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">04 / Comparativa</span>
+      <span class="mono">Tres formas de contratar lo mismo</span>
+      <span class="mono m"><span class="kc">SaaS</span> · Consultoría · <span class="kc">RaaS</span></span>
+    </div>
+
+    <h2 class="rv">Tres maneras de pagar por <em>casi</em> lo mismo.</h2>
+
+    <div class="rv" style="overflow-x:auto">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th class="rowk"></th>
+            <th class="h">SaaS<small>Software como servicio</small></th>
+            <th class="h">Consultoría clásica<small>Proyecto con fecha</small></th>
+            <th class="h raas">RaaS<small>Resultados como servicio</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="rowk">Qué contratás</th>
+            <td data-k="Qué contratás" data-m="SaaS">Acceso a un software que ya existe</td>
+            <td data-k="Qué contratás" data-m="Consultoría">Horas de un especialista</td>
+            <td class="raas" data-k="Qué contratás" data-m="RaaS">Un resultado de negocio concreto</td>
+          </tr>
+          <tr>
+            <th class="rowk">Qué te llega</th>
+            <td data-k="Qué te llega" data-m="SaaS">Un usuario y una contraseña</td>
+            <td data-k="Qué te llega" data-m="Consultoría">Un entregable y un informe</td>
+            <td class="raas" data-k="Qué te llega" data-m="RaaS">Un número que se mueve, no un entregable que se archiva</td>
+          </tr>
+          <tr>
+            <th class="rowk">Quién trabaja</th>
+            <td data-k="Quién trabaja" data-m="SaaS">Vos y tu equipo, todos los días</td>
+            <td data-k="Quién trabaja" data-m="Consultoría">El consultor, mientras dura el proyecto</td>
+            <td class="raas" data-k="Quién trabaja" data-m="RaaS">Nosotros, de forma continua</td>
+          </tr>
+          <tr>
+            <th class="rowk">Cuándo termina</th>
+            <td data-k="Cuándo termina" data-m="SaaS">Cuando dejás de pagar la licencia</td>
+            <td data-k="Cuándo termina" data-m="Consultoría">El día de la entrega</td>
+            <td class="raas" data-k="Cuándo termina" data-m="RaaS">No termina: se sostiene y se ajusta</td>
+          </tr>
+          <tr>
+            <th class="rowk">Si no funciona</th>
+            <td data-k="Si no funciona" data-m="SaaS">Es «un problema de adopción». Tuyo.</td>
+            <td data-k="Si no funciona" data-m="Consultoría">Ya se entregó y se cerró. Se recontrata.</td>
+            <td class="raas" data-k="Si no funciona" data-m="RaaS">Nadie lo da por cerrado</td>
+          </tr>
+          <tr>
+            <th class="rowk">Qué se mide</th>
+            <td data-k="Qué se mide" data-m="SaaS">Usuarios activos, uso de la licencia</td>
+            <td data-k="Qué se mide" data-m="Consultoría">Que el proyecto salga en fecha</td>
+            <td class="raas" data-k="Qué se mide" data-m="RaaS">Que la pregunta del principio tenga respuesta sin que la pidas</td>
+          </tr>
+          <tr>
+            <th class="rowk">A qué se parece</th>
+            <td data-k="A qué se parece" data-m="SaaS">Alquilar la máquina</td>
+            <td data-k="A qué se parece" data-m="Consultoría">Encargar la obra</td>
+            <td class="raas" data-k="A qué se parece" data-m="RaaS">Contratar el resultado de la obra</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 · RESULTADOS ══════════ -->
+<section class="sec" id="resultados">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">05 / Resultados</span>
+      <span class="mono">Qué entregamos, dicho en resultados</span>
+      <span class="mono m">Ver · Ahorrar · Ganar</span>
+    </div>
+
+    <h2 class="rv">Casi todo lo que nos piden es <em>una de estas tres</em> cosas.</h2>
+    <p class="lede rv">Cambia el rubro, cambia el tamaño, cambia la tecnología. El resultado que se busca,
+      casi nunca.</p>
+
+    <div class="rescards">
+      <article class="rescard rv">
+        <div class="rn">R.01 · Ver</div>
+        <h3>Saber en qué estás parado.</h3>
+        <p>Un número por pregunta, el mismo para todos, actualizado sin que nadie lo arme a mano.</p>
+        <ul>
+          <li>El mismo número en todas las pantallas</li>
+          <li>El cierre del día sin esperar a nadie</li>
+          <li>Alertas cuando algo se sale de rango</li>
+          <li>Un diccionario de negocio, no diez criterios</li>
+        </ul>
+        <div class="how">El cómo · Power BI · modelo de datos unificado · integraciones · paneles a medida</div>
+      </article>
+
+      <article class="rescard rv">
+        <div class="rn">R.02 · Ahorrar</div>
+        <h3>Dejar de hacerlo a mano.</h3>
+        <p>Trabajo que hoy hace una persona todos los días y mañana no lo hace nadie, porque ya está hecho.</p>
+        <ul>
+          <li>Cargas e importaciones que corren solas</li>
+          <li>Controles que avisan, en vez de auditar tarde</li>
+          <li>Un ERP viejo, abierto en el navegador</li>
+          <li>Procesos que dejan de depender de una sola persona</li>
+        </ul>
+        <div class="how">El cómo · automatizaciones · integración con ERP y punto de venta · portales de captura · IA donde agrega</div>
+      </article>
+
+      <article class="rescard rv">
+        <div class="rn">R.03 · Ganar</div>
+        <h3>Cobrar mejor y vender más.</h3>
+        <p>Decisiones comerciales tomadas con el margen a la vista, y canales propios que no dependen de una plataforma ajena.</p>
+        <ul>
+          <li>Costos y márgenes al día, por producto</li>
+          <li>Precios mirando a la competencia</li>
+          <li>Sitio y tienda propios, sin alquiler de por medio</li>
+          <li>Reseñas y reputación bajo control</li>
+        </ul>
+        <div class="how">El cómo · costeo y márgenes · control de precios · sitio y tienda a medida · reseñas y campañas</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 06 · EL RESULTADO EN VIVO ══════════ -->
+<section class="sec alt" id="vivo">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">06 / En vivo</span>
+      <span class="mono">Un resultado, no una captura</span>
+      <span class="mono m">Tocá los filtros</span>
+    </div>
+
+    <h2 class="rv">Esto no es una imagen. <em>Recalcula</em> mientras lo tocás.</h2>
+    <p class="lede rv">Corre en tu navegador, con datos de ejemplo. Movés un filtro y se recalculan los
+      números, la serie y las alertas. Así es como llega un resultado cuando está bien hecho: <b>no hay que
+      pedirlo, ni esperar a que alguien lo arme.</b></p>
+
+    <div class="board rv" id="board">
+      <div class="boardbar" role="tablist" aria-label="Área">
+        <button class="bt" role="tab" data-tab="0" aria-selected="true">Ventas</button>
+        <button class="bt" role="tab" data-tab="1" aria-selected="false">Operaciones</button>
+        <button class="bt" role="tab" data-tab="2" aria-selected="false">Marketing</button>
+        <span class="state" id="bstate">Actualizado</span>
+      </div>
+
+      <div class="boardbody">
+        <div class="filters">
+          <p class="flab">Período</p>
+          <div class="fgroup" id="fperiod"></div>
+          <p class="flab">Región</p>
+          <div class="fgroup" id="fregion"></div>
+          <p class="flab">Segmento</p>
+          <div class="fgroup" id="fsegment"></div>
+          <div class="meta">
+            <div><span>Filas leídas</span><b id="mrows">0</b></div>
+            <div><span>Fuentes</span><b id="msrc">0</b></div>
+            <div><span>Última lectura</span><b id="mtime">--:--</b></div>
+          </div>
+        </div>
+
+        <div class="canvas">
+          <div class="kpis" id="kpis">
+            <div class="kpi"><div class="kl">Ingresos</div><div class="kv num" data-kpi="rev">0</div><div class="kd" data-d="rev"></div></div>
+            <div class="kpi"><div class="kl">Operaciones</div><div class="kv num" data-kpi="deals">0</div><div class="kd" data-d="deals"></div></div>
+            <div class="kpi"><div class="kl">Ticket promedio</div><div class="kv num" data-kpi="avg">0</div><div class="kd" data-d="avg"></div></div>
+            <div class="kpi"><div class="kl">Conversión</div><div class="kv num" data-kpi="conv">0</div><div class="kd" data-d="conv"></div></div>
+          </div>
+
+          <div class="chartwrap">
+            <div class="charthead"><span id="chtitle">Tendencia · ingresos</span><span>Recorré la serie</span></div>
+            <div class="chartbox" id="chartbox">
+              <svg id="chart" viewBox="0 0 600 190" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#A9B8C7" stop-opacity=".22"/>
+                    <stop offset="100%" stop-color="#A9B8C7" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line class="gridline" x1="0" y1="47" x2="600" y2="47"></line>
+                <line class="gridline" x1="0" y1="95" x2="600" y2="95"></line>
+                <line class="gridline" x1="0" y1="143" x2="600" y2="143"></line>
+                <path class="area" id="area" d=""></path>
+                <path class="serie" id="serie" d=""></path>
+                <circle class="dotm" id="dotm" r="3.2" cx="0" cy="0"></circle>
+              </svg>
+              <div class="guide" id="guide"></div>
+              <div class="readout" id="readout"></div>
+            </div>
+          </div>
+
+          <div class="bars" id="bars"></div>
+
+          <div class="insights" id="insights"></div>
+          <div class="boardnote">Datos de ejemplo. En producción las mismas pantallas leen tus fuentes reales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 07 · LA MAQUINARIA ══════════ -->
+<section class="sec" id="maquinaria">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">07 / La maquinaria</span>
+      <span class="mono">Lo que no se ve, pero está</span>
+      <span class="mono m">12+ fuentes integrables</span>
+    </div>
+
+    <div class="machine">
+      <div class="rv">
+        <h2>Nada de esto es magia. <em>Abajo</em> hay un stack.</h2>
+        <p class="lede">El RaaS no elimina el trabajo técnico: lo corre de lugar. Que no lo veas no significa
+          que no esté, así que lo dejamos escrito. No importa dónde vivan hoy tus números, una planilla en
+          OneDrive, un ERP vetusto, la API del ecommerce o la campaña de la semana pasada: se ordenan, se
+          relacionan y se convierten en una sola verdad.</p>
+      </div>
+
+      <div class="rv">
+        <div class="stackrow"><span class="k">Datos</span><span class="v">Modelo unificado, medidas versionadas y un diccionario de negocio único. Un número, un criterio.</span></div>
+        <div class="stackrow"><span class="k">Tableros</span><span class="v">Power BI de punta a punta: modelado, DAX, permisos por rol, drill-down y distribución.</span></div>
+        <div class="stackrow"><span class="k">Desarrollo</span><span class="v">Web, tienda, aplicaciones de escritorio e intranets a medida. Lo que la herramienta comprada no cubre.</span></div>
+        <div class="stackrow"><span class="k">Integración</span><span class="v">ERP, punto de venta, ecommerce y campañas. Cargas automáticas, conciliación y control de excepciones.</span></div>
+        <div class="stackrow"><span class="k">IA</span><span class="v">Donde agrega, no donde decora: asistentes sobre datos propios, clasificación de texto libre, lectura de documentos. Siempre con la última palabra en una persona.</span></div>
+        <div class="stackrow"><span class="k">Entrega</span><span class="v">MVP funcional en 2 a 4 semanas y ajustes desde la primera semana, no al final del proyecto.</span></div>
+      </div>
+    </div>
+
+    <div class="pipe rv" id="pipe" aria-label="Doce fuentes de datos convergen en un modelo unificado y salen como resultados"></div>
+  </div>
+</section>
+
+<!-- ══════════ 08 · CÓMO SE SOSTIENE ══════════ -->
+<section class="sec alt" id="como">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">08 / Cómo trabajamos</span>
+      <span class="mono">Del pedido al resultado</span>
+      <span class="mono m">5 fases · la última no cierra</span>
+    </div>
+
+    <h2 class="rv">Un proceso que <em>no</em> tiene fecha de cierre.</h2>
+    <p class="lede rv">En un proyecto, la última fase es la entrega. Acá la última fase es la que nunca
+      termina: es la que convierte una herramienta entregada en un resultado que se sostiene.</p>
+
+    <div class="steps">
+      <div class="step rv"><div class="w">Semana 01</div><div class="n serif">01</div><h3>Acordar la pregunta</h3><p>Qué tiene que poder responder el negocio, y quién va a usar esa respuesta para decidir.</p></div>
+      <div class="step rv"><div class="w">Semana 01–02</div><div class="n serif">02</div><h3>Mapear</h3><p>De dónde sale hoy ese número. Calidad, frecuencia, acceso, limpieza.</p></div>
+      <div class="step rv"><div class="w">Semana 02–03</div><div class="n serif">03</div><h3>Construir</h3><p>El modelo, el tablero, la integración, la pantalla. Lo que haga falta.</p></div>
+      <div class="step rv"><div class="w">Semana 03–04</div><div class="n serif">04</div><h3>Poner a producir</h3><p>En manos de quien decide, con el equipo capacitado para leerlo solo.</p></div>
+      <div class="step loop rv"><div class="w">Permanente</div><div class="n serif"><span class="spin">↻</span></div><h3>Sostener</h3><p>El negocio cambia y la herramienta cambia con él. Acá no hay entrega final.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 09 · LOS LÍMITES ══════════ -->
+<section class="sec" id="no-es">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">09 / Los límites</span>
+      <span class="mono">Lo que <span class="kc">RaaS</span> no es</span>
+      <span class="mono m">Dicho antes de empezar</span>
+    </div>
+
+    <h2 class="rv">Lo que <em>no</em> es.</h2>
+    <p class="lede rv">Una categoría nueva sirve si aclara. Si además promete de más, deja de servir.</p>
+
+    <div class="nots">
+      <div class="not rv">
+        <div class="x">No es · 01</div>
+        <h3>Un software con nombre nuevo.</h3>
+        <p>Si el producto ya estaba hecho y lo único nuevo es el folleto, eso es SaaS con marketing. Acá
+          primero se define el resultado y recién después se elige la herramienta. A veces la herramienta
+          ya existe y no hay que construir nada: también es una respuesta válida.</p>
+      </div>
+      <div class="not rv">
+        <div class="x">No es · 02</div>
+        <h3>Un reemplazo de tu equipo.</h3>
+        <p>La decisión sigue siendo de las personas que conocen el negocio. Nos hacemos cargo de que tengan
+          con qué decidir y de capacitarlas para que no dependan de nosotros para leerlo.</p>
+      </div>
+      <div class="not rv">
+        <div class="x">No es · 03</div>
+        <h3>La forma correcta para todo pedido.</h3>
+        <p>Hay trabajos que son un proyecto cerrado y está perfecto que lo sean: una web, una migración,
+          un desarrollo puntual. Cuando es así lo decimos y se trabaja como proyecto, sin disfrazarlo de
+          otra cosa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10 · CONTACTO ══════════ -->
+<section class="sec alt" id="contacto">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="mono ix">10 / Contacto</span>
+      <span class="mono">Hablemos</span>
+      <span class="mono m">Caballito · CABA · ARG</span>
+    </div>
+
+    <h2 class="rv">Contanos qué <em>resultado</em> necesitás.</h2>
+    <p class="lede rv">No hace falta que sepas qué herramienta lo resuelve, ni si hace falta una. Esa parte
+      es nuestra.</p>
+
+    <div class="contact" style="margin-top:clamp(36px,5vh,60px)">
+      <form class="rv" id="frm" novalidate>
+        <label class="field"><span>Nombre</span><input type="text" name="nombre" placeholder="Cómo te llamás" /></label>
+        <label class="field"><span>Email</span><input type="email" name="email" placeholder="Dónde te escribimos" /></label>
+        <label class="field"><span>Empresa</span><input type="text" name="empresa" placeholder="Dónde trabajás" /></label>
+        <label class="field"><span>Qué resultado buscás</span><textarea name="mensaje" rows="4" placeholder="«Quiero saber todos los lunes qué producto me deja margen», «quiero dejar de cargar la venta a mano»…"></textarea></label>
+        <div class="actions" style="margin-top:26px"><button class="btn solid" type="submit">Enviar mensaje</button></div>
+        <div class="formnote" id="frmnote">Maqueta · el formulario todavía no envía nada</div>
+      </form>
+
+      <div class="rv">
+        <div class="inforow"><span class="k">Ubicación</span><span class="v">Caballito · CABA · Argentina</span></div>
+        <div class="inforow"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/catconsultores</span></div>
+        <div class="inforow"><span class="k">Horario</span><span class="v">Lunes a viernes · 10:00 – 19:00 ART</span></div>
+        <div class="inforow"><span class="k">Desde</span><span class="v">2015 · César Augusto Tiraferri</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand"><img src="../assets/logo.png" alt="" /><span class="bn">CAT <span>Consultores</span></span></div>
+        <p class="disc">Por políticas de confidencialidad y resguardo de la información, CAT Consultores se
+          abstiene de mencionar clientes particulares o empresas que hayan contratado nuestros servicios.
+          Las pantallas de esta página son representaciones con datos de ejemplo. Power BI es marca
+          registrada de Microsoft.</p>
+      </div>
+      <div class="fcol">
+        <h4>Navegación</h4>
+        <a href="#que-es">Qué es RaaS</a>
+        <a href="#linea">SaaS vs RaaS</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#vivo">En vivo</a>
+        <a href="#maquinaria">La maquinaria</a>
+        <a href="#no-es">Los límites</a>
+      </div>
+      <div class="fcol">
+        <h4>Conectar</h4>
+        <a href="#contacto">Formulario</a>
+        <span>linkedin.com/in/catconsultores</span>
+        <span>catconsultores.com.ar</span>
+      </div>
+    </div>
+    <div class="fbot mono">
+      <span>© 2015–2026 CAT Consultores</span>
+      <span>Maqueta interna v1 · Resultados como Servicio</span>
+    </div>
+  </div>
+</footer>
+
+<button id="notesbtn" aria-expanded="false" aria-controls="notes">◉ Notas de maqueta</button>
+<aside id="notes" hidden>
+  <h4>Notas de esta maqueta · v1</h4>
+  <p>Archivo local. No toca el sitio publicado ni el brochure. La v0 está en el mismo directorio.</p>
+
+  <div class="mrow">
+    <span class="st">Tu navegador pide: <b id="mstate">…</b></span>
+    <span class="st" id="mwhy" style="margin-top:7px;text-transform:none;letter-spacing:.02em;line-height:1.5"></span>
+    <button id="mbtn" type="button">…</button>
+  </div>
+
+  <h5>Qué cambia respecto de la v0</h5>
+  <ul>
+    <li><b>Contraste corregido</b> en todo el texto secundario (era el reclamo: las frases tachadas casi no se leían).</li>
+    <li><b>Hero:</b> el tachado se dibuja y la promesa aparece después. La animación representa el reencuadre.</li>
+    <li><b>02:</b> la escalera IaaS / PaaS / SaaS / RaaS es clickeable y mide cuánto hace el proveedor en cada modelo.</li>
+    <li><b>03:</b> la banda de responsabilidad barre la cadena y hay un contador de tramos que quedan de tu lado. Se autodemuestra una vez al entrar.</li>
+    <li><b>06 nuevo · tablero en vivo:</b> filtros reales, KPIs que recalculan, serie que se redibuja y se puede recorrer con el mouse.</li>
+    <li><b>07:</b> las 12 fuentes convergen en un modelo único con flujo animado.</li>
+  </ul>
+
+  <h5>Reglas de motion aplicadas</h5>
+  <ul>
+    <li>Solo <b>transform</b> y <b>opacity</b>. Las barras usan scaleX, no width.</li>
+    <li>Cambios de estado entre 180 y 300 ms; lo explicativo puede durar más.</li>
+    <li>Sin listeners de scroll: todo por IntersectionObserver.</li>
+    <li>Hover solo en dispositivos con puntero fino.</li>
+    <li><b>prefers-reduced-motion</b> apaga el movimiento y deja los estados finales.</li>
+    <li>El flujo de la maquinaria se pausa cuando la sección sale de pantalla.</li>
+  </ul>
+
+  <h5>Frases de compromiso · resueltas</h5>
+  <ul>
+    <li><b>Si no funciona:</b> queda «nadie lo da por cerrado». Contesta lo mismo que las otras dos columnas y no compromete plata ni resultado.</li>
+    <li><b>Avisar antes de empezar:</b> se eliminó. No hay diagnóstico previo a contratar, así que la página no lo dice.</li>
+    <li><b>El indicador:</b> pasó de «el indicador que acordamos» a la pregunta de negocio. La fase 01 del proceso acompaña.</li>
+    <li><b>Además:</b> «un número que se mueve todas las semanas» perdió la cadencia. Sin indicador acordado, prometer frecuencia quedaba sin respaldo.</li>
+  </ul>
+
+  <h5>La página ya no promete</h5>
+  <ul>
+    <li>Ni precios, ni garantías, ni pago por resultado, ni métricas comprometidas, ni plazos de respuesta. Todo lo que queda describe cómo trabajás o qué es el modelo.</li>
+  </ul>
+
+  <h5>Sigue pendiente</h5>
+  <ul>
+    <li>Versión en inglés, casos, video, formulario real y SEO.</li>
+    <li>Brochure, con este copy ya cerrado.</li>
+  </ul>
+</aside>
+
+<script>
+(function(){
+  "use strict";
+  var mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var FORCED = false;
+  try { FORCED = localStorage.getItem("cat-motion") === "force"; } catch(e){}
+  if (FORCED) document.documentElement.setAttribute("data-motion", "force");
+  var REDUCE = mqReduce.matches && !FORCED;
+  var EASE = function(t){ return 1 - Math.pow(1 - t, 3); };
+
+  /* ---------- utilidades ---------- */
+  var nf0 = new Intl.NumberFormat("es-AR", {maximumFractionDigits:0});
+  var nf1 = new Intl.NumberFormat("es-AR", {minimumFractionDigits:1, maximumFractionDigits:1});
+
+  function tween(from, to, ms, cb){
+    if (REDUCE){ cb(to); return; }
+    var t0 = performance.now();
+    function step(now){
+      var p = Math.min(1, (now - t0) / ms);
+      cb(from + (to - from) * EASE(p));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* generador determinístico: el mismo filtro da siempre la misma serie */
+  function seedFrom(str){
+    var h = 2166136261;
+    for (var i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function rng(seed){
+    return function(){
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  /* ---------- topbar sin listener de scroll ---------- */
+  var topbar = document.getElementById("topbar");
+  new IntersectionObserver(function(e){
+    topbar.classList.toggle("stuck", !e[0].isIntersecting);
+  }).observe(document.getElementById("sentinel"));
+
+  /* ---------- menú mobile ---------- */
+  var burger = document.getElementById("burger"), nav = document.getElementById("nav");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", String(open));
+    burger.textContent = open ? "Cerrar" : "Menú";
+  });
+  nav.addEventListener("click", function(e){
+    if (e.target.closest("a") && nav.classList.contains("open")){
+      nav.classList.remove("open");
+      burger.setAttribute("aria-expanded","false");
+      burger.textContent = "Menú";
+    }
+  });
+
+  /* ---------- reveal ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {rootMargin:"0px 0px -8% 0px", threshold:.06});
+  [].forEach.call(document.querySelectorAll(".rv, .swaprow"), function(el, i){
+    if (!REDUCE) el.style.transitionDelay = (Math.min(i % 5, 4) * 55) + "ms";
+    io.observe(el);
+  });
+
+  /* ---------- hero: el tachado se dibuja, después aparece la promesa ---------- */
+  var h1 = document.getElementById("h1");
+
+  /* el tachado va al centro optico real del renglon, medido de la fuente que
+     efectivamente cargo: linea base (half-leading + ascent) menos media altura de x */
+  var mctx = null;
+  function placeStrike(){
+    var el = h1.querySelector(".strike");
+    if (!el) return;
+    var cs = getComputedStyle(el);
+    var fs = parseFloat(cs.fontSize), lh = parseFloat(cs.lineHeight);
+    if (!fs || !lh) return;
+    mctx = mctx || document.createElement("canvas").getContext("2d");
+    mctx.font = cs.fontStyle + " " + cs.fontWeight + " " + fs + "px " + cs.fontFamily;
+    var m = mctx.measureText("x");
+    if (typeof m.fontBoundingBoxAscent !== "number") return;   /* navegador viejo: queda el .6em del CSS */
+    var half = (lh - (m.fontBoundingBoxAscent + m.fontBoundingBoxDescent)) / 2;
+    var center = half + m.fontBoundingBoxAscent - m.actualBoundingBoxAscent / 2;
+    el.style.setProperty("--strike-top", center.toFixed(2) + "px");
+  }
+
+  function startHero(){ placeStrike(); requestAnimationFrame(function(){ h1.classList.add("drawn"); }); }
+  if (document.fonts && document.fonts.ready){
+    var late = setTimeout(startHero, 1200);           /* si la fuente no llega, no bloqueamos */
+    document.fonts.ready.then(function(){ clearTimeout(late); startHero(); });
+  } else { startHero(); }
+  if (window.ResizeObserver) new ResizeObserver(placeStrike).observe(h1);
+
+  /* contadores del hero */
+  var statsDone = false;
+  var ioStats = new IntersectionObserver(function(e){
+    if (!e[0].isIntersecting || statsDone) return;
+    statsDone = true;
+    [].forEach.call(document.querySelectorAll("#stats .n[data-to]"), function(el){
+      var to = +el.dataset.to, sfx = el.dataset.suffix || "";
+      tween(0, to, 900, function(v){ el.textContent = Math.round(v) + sfx; });
+    });
+    ioStats.disconnect();
+  }, {threshold:.4});
+  ioStats.observe(document.getElementById("stats"));
+
+  /* ---------- 02 · escalera as-a-service ---------- */
+  var rungs = [].slice.call(document.querySelectorAll(".rung"));
+  function setRung(active){
+    rungs.forEach(function(r){
+      var on = r === active;
+      r.setAttribute("aria-pressed", String(on));
+      r.querySelector(".meter i").style.setProperty("--f", on ? r.dataset.f : "0");
+    });
+  }
+  rungs.forEach(function(r){
+    r.addEventListener("click", function(){ setRung(r); });
+    r.addEventListener("mouseenter", function(){ if (matchMedia("(hover:hover)").matches) setRung(r); });
+  });
+  var ioLad = new IntersectionObserver(function(e){
+    if (e[0].isIntersecting){ setRung(rungs[3]); ioLad.disconnect(); }
+  }, {threshold:.3});
+  ioLad.observe(document.getElementById("ladder"));
+
+  /* ---------- 03 · línea de responsabilidad ---------- */
+  var MODES = {
+    saas: { from:1, to:1, tag:"SaaS",
+      txt:"Te alquilan un programa que ya existe. Conseguir el dato, configurarlo para tu negocio, operarlo todos los días y sostenerlo cuando el negocio cambia sigue siendo trabajo tuyo, y ahí está la mayor parte del esfuerzo real." },
+    cons: { from:1, to:2, tag:"Consultoría clásica",
+      txt:"Alguien viene, lo arma, lo entrega y se va. El día de la entrega termina el proyecto; tu negocio, no. Seis meses después la herramienta describe una empresa que ya cambió." },
+    raas: { from:0, to:5, tag:"RaaS",
+      txt:"Nos hacemos cargo de la cadena entera y de que siga funcionando el mes que viene. Lo que te llega es el número listo para usar, no la tarea de producirlo." }
+  };
+  var nodes = [].slice.call(document.querySelectorAll(".chaintrack .node"));
+  var owners = [].slice.call(document.querySelectorAll("#owner span"));
+  var tabs = [].slice.call(document.querySelectorAll(".tab"));
+  var capTag = document.getElementById("capTag"), capTxt = document.getElementById("capTxt");
+  var tallyN = document.getElementById("tallyN"), tallyT = document.getElementById("tallyT");
+  var curTally = 6, curMode = null;
+
+  function setMode(key){
+    var m = MODES[key];
+    if (!m || key === curMode) return;
+    curMode = key;
+    nodes.forEach(function(n,i){ n.classList.toggle("covered", i >= m.from && i <= m.to); });
+    owners.forEach(function(o,i){
+      var prov = i >= m.from && i <= m.to;
+      /* la banda barre en orden: cada celda arranca 35 ms después de la anterior */
+      o.style.setProperty("--d", (i * 35) + "ms");
+      o.classList.toggle("prov", prov);
+      o.querySelector("b").textContent = prov ? "Proveedor" : "Tuyo";
+    });
+    tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.mode === key)); });
+    capTag.textContent = m.tag;
+    capTxt.textContent = m.txt;
+    var left = 6 - (m.to - m.from + 1);
+    tallyT.textContent = left === 1 ? "sigue siendo tuyo" : (left === 0 ? "quedan de tu lado" : "siguen siendo tuyos");
+    tween(curTally, left, 420, function(v){ tallyN.textContent = Math.round(v); });
+    curTally = left;
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ setMode(t.dataset.mode); });
+    t.addEventListener("keydown", function(e){
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      var n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); setMode(n.dataset.mode);
+    });
+  });
+  setMode("raas");
+
+  /* se demuestra sola una vez: SaaS, consultoría, RaaS */
+  var demoed = false;
+  var ioChain = new IntersectionObserver(function(e){
+    if (!e[0].isIntersecting || demoed) return;
+    demoed = true; ioChain.disconnect();
+    if (REDUCE) return;
+    setMode("saas");
+    setTimeout(function(){ setMode("cons"); }, 1100);
+    setTimeout(function(){ setMode("raas"); }, 2300);
+  }, {threshold:.45});
+  ioChain.observe(document.getElementById("chain"));
+
+  /* ---------- 06 · tablero en vivo ---------- */
+  var PERIODS = ["7D","30D","90D","YTD"];
+  var REGIONS = ["AR","BR","CL","MX","UY"];
+  var SEGMENTS = ["Retail","Mayorista","E-commerce","B2B"];
+  var TABS = [
+    {t:"Tendencia · ingresos", m:1.00},
+    {t:"Tendencia · operaciones", m:0.78},
+    {t:"Tendencia · campañas", m:1.34}
+  ];
+  var st = { tab:0, period:1, regions:[true,true,false,true,false], segments:[true,false,true,false] };
+  var prev = null;
+
+  function chipGroup(host, labels, isOn, onClick){
+    host.innerHTML = "";
+    labels.forEach(function(l, i){
+      var b = document.createElement("button");
+      b.className = "chipf"; b.type = "button"; b.textContent = l;
+      b.setAttribute("aria-pressed", String(isOn(i)));
+      b.addEventListener("click", function(){ onClick(i); });
+      host.appendChild(b);
+    });
+  }
+  function paintChips(){
+    [].forEach.call(document.querySelectorAll("#fperiod .chipf"), function(b,i){ b.setAttribute("aria-pressed", String(st.period === i)); });
+    [].forEach.call(document.querySelectorAll("#fregion .chipf"), function(b,i){ b.setAttribute("aria-pressed", String(st.regions[i])); });
+    [].forEach.call(document.querySelectorAll("#fsegment .chipf"), function(b,i){ b.setAttribute("aria-pressed", String(st.segments[i])); });
+  }
+
+  function model(){
+    var pm = [0.3, 1, 2.6, 7.4][st.period];
+    var tm = TABS[st.tab].m;
+    var nr = st.regions.filter(Boolean).length || 1;
+    var ns = st.segments.filter(Boolean).length || 1;
+    var mult = pm * tm;
+    var rev = Math.round(142836 * mult * (nr / 3) * (ns / 2));
+    var deals = Math.round(2341 * mult * (nr / 3));
+    var avg = Math.round(rev / Math.max(1, deals));
+    var conv = Math.min(64, 11.4 + mult * 1.6 + ns * 1.9);
+
+    var key = [st.tab, st.period, st.regions.join(""), st.segments.join("")].join("|");
+    var r = rng(seedFrom(key));
+    var series = [], v = 44 + mult * 1.4;
+    for (var i = 0; i < 44; i++){
+      v += (r() - 0.44) * (4 + mult * 0.35) + Math.sin(i / 5.5) * 2.6;
+      series.push(Math.max(9, Math.min(100, v)));
+    }
+    var w = SEGMENTS.map(function(s, i){
+      return st.segments[i] ? (0.42 - i * 0.055) * (0.85 + r() * 0.3) : 0;
+    });
+    var tw = w.reduce(function(a,b){ return a + b; }, 0) || 1;
+    var bars = SEGMENTS.map(function(s, i){
+      return { label:s, on:st.segments[i], value: Math.round(rev * w[i] / tw) };
+    });
+    return { rev:rev, deals:deals, avg:avg, conv:conv, series:series, bars:bars, nr:nr, ns:ns, mult:mult, rand:r };
+  }
+
+  var kpiEls = {};
+  [].forEach.call(document.querySelectorAll("[data-kpi]"), function(el){ kpiEls[el.dataset.kpi] = el; });
+  var deltaEls = {};
+  [].forEach.call(document.querySelectorAll("[data-d]"), function(el){ deltaEls[el.dataset.d] = el; });
+
+  var serie = document.getElementById("serie"), area = document.getElementById("area");
+  var W = 600, H = 190;
+  var lastPts = [];
+
+  function buildPath(series){
+    var n = series.length, max = Math.max.apply(null, series), min = Math.min.apply(null, series);
+    var span = Math.max(1, max - min);
+    var pts = series.map(function(val, i){
+      return [ (i / (n - 1)) * W, H - 12 - ((val - min) / span) * (H - 30) ];
+    });
+    var d = "M" + pts[0][0].toFixed(1) + "," + pts[0][1].toFixed(1);
+    for (var i = 1; i < pts.length; i++){
+      var p0 = pts[i-1], p1 = pts[i], cx = (p0[0] + p1[0]) / 2;
+      d += "C" + cx.toFixed(1) + "," + p0[1].toFixed(1) + " " + cx.toFixed(1) + "," + p1[1].toFixed(1) + " " + p1[0].toFixed(1) + "," + p1[1].toFixed(1);
+    }
+    return { d:d, pts:pts };
+  }
+
+  function drawSerie(series){
+    var b = buildPath(series);
+    lastPts = b.pts;
+    serie.setAttribute("d", b.d);
+    area.setAttribute("d", b.d + "L" + W + "," + H + "L0," + H + "Z");
+    area.classList.add("on");
+    if (REDUCE) return;
+    /* el trazo se redibuja: comunica que el número se recalculó */
+    var len = serie.getTotalLength();
+    serie.style.transition = "none";
+    serie.style.strokeDasharray = len;
+    serie.style.strokeDashoffset = len;
+    serie.getBoundingClientRect();
+    serie.style.transition = "stroke-dashoffset .52s cubic-bezier(.23,1,.32,1)";
+    serie.style.strokeDashoffset = "0";
+  }
+
+  var barsHost = document.getElementById("bars"), barEls = null;
+  function buildBars(){
+    barsHost.innerHTML = "";
+    barEls = SEGMENTS.map(function(s){
+      var row = document.createElement("div");
+      row.className = "barrow";
+      row.innerHTML = '<span class="lbl"></span><span class="bartrack"><i></i></span><span class="barval num"></span>';
+      barsHost.appendChild(row);
+      return row;
+    });
+  }
+
+  var insHost = document.getElementById("insights");
+  function insightsFor(m){
+    var out = [];
+    var worst = null;
+    m.bars.forEach(function(b){ if (b.on && (!worst || b.value < worst.value)) worst = b; });
+    var best = null;
+    m.bars.forEach(function(b){ if (b.on && (!best || b.value > best.value)) best = b; });
+    out.push({ t:"Alerta", b: worst
+      ? "El segmento " + worst.label + " aporta " + nf1.format(worst.value / Math.max(1, m.rev) * 100) + "% de los ingresos del corte. Es el que menos suma."
+      : "No hay segmentos activos: elegí al menos uno para leer el resultado." });
+    out.push({ t:"Oportunidad", b: best
+      ? best.label + " concentra " + nf1.format(best.value / Math.max(1, m.rev) * 100) + "% del total con " + nf0.format(Math.round(m.deals / Math.max(1, m.ns))) + " operaciones."
+      : "Sin datos suficientes en el corte actual." });
+    out.push({ t:"Patrón", b: "Con " + m.nr + (m.nr === 1 ? " región activa" : " regiones activas") + ", el ticket promedio queda en $" + nf0.format(m.avg) + " y la conversión en " + nf1.format(m.conv) + "%." });
+    return out;
+  }
+
+  var stateEl = document.getElementById("bstate");
+  var busyT = null;
+  function markBusy(){
+    stateEl.textContent = "Recalculando";
+    stateEl.classList.add("busy");
+    clearTimeout(busyT);
+    busyT = setTimeout(function(){
+      stateEl.textContent = "Actualizado";
+      stateEl.classList.remove("busy");
+    }, 620);
+  }
+
+  function render(first){
+    var m = model();
+    if (!first) markBusy();
+
+    var p = prev || { rev:0, deals:0, avg:0, conv:0 };
+    tween(p.rev, m.rev, 620, function(v){ kpiEls.rev.textContent = "$" + nf0.format(Math.round(v)); });
+    tween(p.deals, m.deals, 620, function(v){ kpiEls.deals.textContent = nf0.format(Math.round(v)); });
+    tween(p.avg, m.avg, 620, function(v){ kpiEls.avg.textContent = "$" + nf0.format(Math.round(v)); });
+    tween(p.conv, m.conv, 620, function(v){ kpiEls.conv.textContent = nf1.format(v) + "%"; });
+
+    if (prev){
+      [["rev","rev"],["deals","deals"],["avg","avg"],["conv","conv"]].forEach(function(pair){
+        var k = pair[0], now = m[k], was = prev[k];
+        var d = was ? (now - was) / was * 100 : 0;
+        var el = deltaEls[k];
+        el.textContent = (d >= 0 ? "↗ " : "↘ ") + nf1.format(Math.abs(d)) + "% vs. corte anterior";
+        el.classList.toggle("down", d < 0);
+      });
+    } else {
+      deltaEls.rev.textContent = "↗ 12,4% vs. período previo";
+      deltaEls.deals.textContent = "↗ 8,1% vs. período previo";
+      deltaEls.avg.textContent = "↗ 3,9% vs. período previo";
+      deltaEls.conv.textContent = "↗ 2,2 pts vs. período previo";
+    }
+
+    document.getElementById("chtitle").textContent = TABS[st.tab].t;
+    drawSerie(m.series);
+
+    var maxBar = Math.max.apply(null, m.bars.map(function(b){ return b.value; }).concat([1]));
+    m.bars.forEach(function(b, i){
+      var row = barEls[i];
+      row.classList.toggle("on", b.on);
+      row.querySelector(".lbl").textContent = b.label;
+      row.querySelector(".bartrack i").style.setProperty("--f", (b.value / maxBar).toFixed(3));
+      row.querySelector(".barval").textContent = b.on ? "$" + nf0.format(b.value) : "—";
+    });
+
+    insHost.innerHTML = "";
+    insightsFor(m).forEach(function(x){
+      var d = document.createElement("div");
+      d.className = "ins";
+      d.innerHTML = '<div class="it"></div><div class="ib"></div>';
+      d.querySelector(".it").textContent = x.t;
+      d.querySelector(".ib").textContent = x.b;
+      insHost.appendChild(d);
+    });
+
+    document.getElementById("mrows").textContent = nf0.format(1400000 + m.deals * 12);
+    document.getElementById("msrc").textContent = 3 + m.nr;
+    var now = new Date();
+    document.getElementById("mtime").textContent =
+      String(now.getHours()).padStart(2,"0") + ":" + String(now.getMinutes()).padStart(2,"0");
+
+    prev = m;
+  }
+
+  chipGroup(document.getElementById("fperiod"), PERIODS,
+    function(i){ return st.period === i; },
+    function(i){ st.period = i; paintChips(); render(); });
+  chipGroup(document.getElementById("fregion"), REGIONS,
+    function(i){ return st.regions[i]; },
+    function(i){
+      var n = st.regions.filter(Boolean).length;
+      if (st.regions[i] && n === 1) return;
+      st.regions[i] = !st.regions[i]; paintChips(); render();
+    });
+  chipGroup(document.getElementById("fsegment"), SEGMENTS,
+    function(i){ return st.segments[i]; },
+    function(i){
+      var n = st.segments.filter(Boolean).length;
+      if (st.segments[i] && n === 1) return;
+      st.segments[i] = !st.segments[i]; paintChips(); render();
+    });
+  [].forEach.call(document.querySelectorAll(".boardbar .bt"), function(b){
+    b.addEventListener("click", function(){
+      st.tab = +b.dataset.tab;
+      [].forEach.call(document.querySelectorAll(".boardbar .bt"), function(x){
+        x.setAttribute("aria-selected", String(x === b));
+      });
+      render();
+    });
+  });
+  buildBars();
+  render(true);
+
+  /* recorrer la serie con el mouse */
+  var box = document.getElementById("chartbox"), guide = document.getElementById("guide"),
+      readout = document.getElementById("readout"), dotm = document.getElementById("dotm");
+  box.addEventListener("pointermove", function(e){
+    if (!lastPts.length || !prev) return;
+    var r = box.getBoundingClientRect();
+    var rel = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+    var idx = Math.round(rel * (lastPts.length - 1));
+    var pt = lastPts[idx];
+    var px = (pt[0] / W) * r.width;
+    guide.style.transform = "translateX(" + px + "px)";
+    guide.classList.add("on");
+    dotm.setAttribute("cx", pt[0]); dotm.setAttribute("cy", pt[1]);
+    dotm.classList.add("on");
+    var share = prev.series[idx] / prev.series.reduce(function(a,b){ return a + b; }, 0);
+    readout.textContent = "Día " + (idx + 1) + " · $" + nf0.format(Math.round(prev.rev * share));
+    readout.style.transform = "translate(-50%,-100%)";
+    readout.style.left = px + "px";
+    readout.classList.add("on");
+  });
+  box.addEventListener("pointerleave", function(){
+    guide.classList.remove("on");
+    readout.classList.remove("on");
+    dotm.classList.remove("on");
+  });
+
+  /* ---------- 07 · la maquinaria ---------- */
+  var SOURCES = ["Excel","SQL Server","MySQL","PostgreSQL","Google Analytics","Meta Ads",
+                 "Google Sheets","SharePoint","CSV / TXT","APIs REST","Web scraping","Dataverse"];
+  var OUTS = [["Ver","Saber dónde estás"],["Ahorrar","Dejar de hacerlo a mano"],["Ganar","Cobrar mejor"]];
+
+  (function pipeline(){
+    var host = document.getElementById("pipe");
+    var svgNS = "http://www.w3.org/2000/svg";
+    var W2 = 960, H2 = 430, LX = 196, HUB = 486, OUTX = 742;
+    var svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W2 + " " + H2);
+    svg.setAttribute("role", "img");
+
+    var canOffset = window.CSS && CSS.supports && CSS.supports("offset-path", 'path("M0,0L1,1")');
+    var paths = [];
+
+    SOURCES.forEach(function(name, i){
+      var y = 26 + i * ((H2 - 52) / (SOURCES.length - 1));
+      var d = "M" + LX + "," + y + " C" + (LX + 130) + "," + y + " " + (HUB - 120) + "," + (H2/2) + " " + HUB + "," + (H2/2);
+      var p = document.createElementNS(svgNS, "path");
+      p.setAttribute("class", "pl"); p.setAttribute("d", d);
+      svg.appendChild(p); paths.push({el:p, d:d});
+
+      var g = document.createElementNS(svgNS, "g");
+      g.setAttribute("class", "shit"); g.setAttribute("tabindex", "0");
+      var t = document.createElementNS(svgNS, "text");
+      t.setAttribute("class", "slab"); t.setAttribute("x", LX - 14);
+      t.setAttribute("y", y + 4); t.setAttribute("text-anchor", "end");
+      t.textContent = name;
+      g.appendChild(t);
+      var hit = document.createElementNS(svgNS, "rect");
+      hit.setAttribute("x", 0); hit.setAttribute("y", y - 13);
+      hit.setAttribute("width", LX - 8); hit.setAttribute("height", 26);
+      hit.setAttribute("fill", "transparent");
+      g.appendChild(hit);
+      function hi(on){
+        host.toggleAttribute("data-hi", on);
+        p.classList.toggle("hi", on);
+      }
+      g.addEventListener("mouseenter", function(){ hi(true); });
+      g.addEventListener("mouseleave", function(){ hi(false); });
+      g.addEventListener("focus", function(){ hi(true); });
+      g.addEventListener("blur", function(){ hi(false); });
+      svg.appendChild(g);
+    });
+
+    var trunk = document.createElementNS(svgNS, "path");
+    trunk.setAttribute("class", "pl trunk");
+    var td = "M" + HUB + "," + (H2/2) + "L" + (OUTX - 118) + "," + (H2/2);
+    trunk.setAttribute("d", td);
+    svg.appendChild(trunk);
+
+    var ring = document.createElementNS(svgNS, "circle");
+    ring.setAttribute("class", "hubring");
+    ring.setAttribute("cx", HUB); ring.setAttribute("cy", H2/2); ring.setAttribute("r", 9);
+    svg.appendChild(ring);
+
+    var hl = document.createElementNS(svgNS, "text");
+    hl.setAttribute("class", "hublab"); hl.setAttribute("x", HUB - 6);
+    hl.setAttribute("y", H2/2 - 38); hl.setAttribute("text-anchor", "middle");
+    hl.textContent = "Una sola verdad";
+    svg.appendChild(hl);
+
+    OUTS.forEach(function(o, i){
+      var y = 96 + i * ((H2 - 192) / 2);
+      var d = "M" + (OUTX - 118) + "," + (H2/2) + " C" + (OUTX - 60) + "," + (H2/2) + " " + (OUTX - 56) + "," + y + " " + OUTX + "," + y;
+      var p = document.createElementNS(svgNS, "path");
+      p.setAttribute("class", "pl trunk"); p.setAttribute("d", d);
+      svg.appendChild(p); paths.push({el:p, d:d, out:true});
+
+      var t = document.createElementNS(svgNS, "text");
+      t.setAttribute("class", "outlab"); t.setAttribute("x", OUTX + 14); t.setAttribute("y", y);
+      t.textContent = o[0];
+      svg.appendChild(t);
+      var s = document.createElementNS(svgNS, "text");
+      s.setAttribute("class", "outsub"); s.setAttribute("x", OUTX + 14); s.setAttribute("y", y + 17);
+      s.textContent = o[1];
+      svg.appendChild(s);
+    });
+
+    if (canOffset && !REDUCE){
+      paths.forEach(function(p, i){
+        var c = document.createElementNS(svgNS, "circle");
+        c.setAttribute("class", "dot"); c.setAttribute("r", p.out ? 3 : 2.4);
+        c.setAttribute("cx", 0); c.setAttribute("cy", 0);
+        c.style.offsetPath = 'path("' + p.d + '")';
+        c.style.animationDelay = (i * 0.27).toFixed(2) + "s";
+        if (p.out) c.style.animationDuration = "2.1s";
+        svg.appendChild(c);
+      });
+    }
+
+    host.appendChild(svg);
+
+    /* el flujo solo corre cuando se ve */
+    new IntersectionObserver(function(e){
+      host.classList.toggle("run", e[0].isIntersecting);
+    }, {threshold:.15}).observe(host);
+  })();
+
+  /* ---------- formulario inerte ---------- */
+  document.getElementById("frm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var n = document.getElementById("frmnote");
+    n.textContent = "Maqueta · no se envió nada. En el sitio real esto va a FormSubmit.";
+    n.style.color = "var(--accent)";
+  });
+
+  /* ---------- control de movimiento ---------- */
+  var mstate = document.getElementById("mstate"),
+      mwhy = document.getElementById("mwhy"),
+      mbtn = document.getElementById("mbtn");
+  function paintMotion(){
+    var red = mqReduce.matches;
+    mstate.textContent = red ? "movimiento reducido" : "movimiento normal";
+    mwhy.textContent = red
+      ? "Windows Server trae los efectos visuales apagados por defecto, y el navegador lo respeta: por eso no ves las animaciones. En una máquina de cliente normalmente están prendidas."
+      : "Las animaciones se ven como fueron diseñadas.";
+    mbtn.textContent = FORCED ? "Volver a automático" : "Forzar animaciones igual";
+    mbtn.style.display = (red || FORCED) ? "block" : "none";
+  }
+  mbtn.addEventListener("click", function(){
+    try { 
+      if (FORCED) localStorage.removeItem("cat-motion");
+      else localStorage.setItem("cat-motion", "force");
+    } catch(e){}
+    location.reload();
+  });
+  if (mqReduce.addEventListener) mqReduce.addEventListener("change", paintMotion);
+  paintMotion();
+
+  /* ---------- notas ---------- */
+  var nb = document.getElementById("notesbtn"), np = document.getElementById("notes");
+  np.hidden = false;
+  nb.addEventListener("click", function(){
+    var open = np.classList.toggle("open");
+    nb.setAttribute("aria-expanded", String(open));
+    nb.textContent = open ? "✕ Cerrar notas" : "◉ Notas de maqueta";
+  });
+})();
+</script>
+</body>
+</html>
