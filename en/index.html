@@ -1798,5 +1798,24 @@ footer{border-top:1px solid var(--rule);padding:clamp(48px,7vh,80px) 0 40px;back
 
 })();
 </script>
+<!-- Chat de chatIA (Chatwoot). Se carga después de la página para no competir con ella. -->
+<script>
+  window.chatwootSettings = { locale: "en", position: "right" };
+  window.addEventListener("load", function () {
+    (function(d,t) {
+      var BASE_URL="https://chatia.catconsultores.com.ar";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'LB6EoS5qkvxDHrh7Zxe9yoqf',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  });
+</script>
 </body>
 </html>
